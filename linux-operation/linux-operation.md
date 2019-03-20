@@ -134,6 +134,8 @@ top -p 1309, 1882
 # Display Absolute Path of the Command and its Arguments – Press c
 
 # Quit Top Command After a Specified Number of Iterations Using top -n
+# Decrease Number of Processes Displayed in Top Output – Press n
+
 ```
 
 
