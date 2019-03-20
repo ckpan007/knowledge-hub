@@ -120,7 +120,20 @@ ps -C java -L -o pid,tid,pcpu,state,nlwp,args #显示所有的Java运行程序�
 #Show Processes Sorted by any Top Output Column – Press O
 # To sort top output by any column, Press O (upper-case O) , which will display all the possible columns that you can sort by as shown below.
 # Kill a Task Without Exiting From Top – Press k
+# Renice a Unix Process Without Exiting From Top – Press r
+# Display Selected User in Top Output Using top -u
+top -u root
 
+# Display Only Specific Process with Given PIDs Using top -p
+top -p 1309, 1882
+
+# Display All CPUs / Cores in the Top Output – Press 1 (one)
+
+# Highlight Running Processes in the Linux Top Command Output – Press z or b
+
+# Display Absolute Path of the Command and its Arguments – Press c
+
+# Quit Top Command After a Specified Number of Iterations Using top -n
 ```
 
 
