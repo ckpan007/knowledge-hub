@@ -36,9 +36,18 @@ pushd +/-n #一般要先dirs -v，然后再用pushd加索引切换
 ```
 
 ## Software Installation
+### RHEL - Red Hat Enterprise
+
 ```sh
+For more: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/deployment_guide/sec-listing_packages
 yum search some-package-name
 yum install some-package-name
+yum list installed # list installed software
+yum list all # list all softwares
+yum update -y # update yum package
+yum install -y <package name>
+
+yum remove <package name> # rmove package
 ```
 
 

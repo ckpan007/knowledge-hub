@@ -61,6 +61,25 @@ yum install sysstat
 
 
 
+## Java
+### Installation on RHEL
+#### Install OpenJDK 8 JRE
+```sh
+yum install java-1.8.0-openjdk
+```
+#### Install OpenJDK 8 JDK
+```sh
+yum install java-1.8.0-openjdk-devel
+```
+After installation, java and javac can be directlry used in your environment.
+For more detail, see [here](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora).
+### Configure java environment variables
+```sh
+# https://access.redhat.com/documentation/en-US/JBoss_Communications_Platform/5.0/html/Platform_Installation_Guide/sect-Configuring_Java.html
+export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
 
 
 
