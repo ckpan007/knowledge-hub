@@ -157,3 +157,24 @@ docker image ls -a
 docker contaienr ls -a
 
 ```
+
+
+
+
+# Ubuntu
+
+## Package Management
+```sh
+
+# 查询出software name
+dpkg --list #这样太不人性化，要加grep
+dpkg --list | grep <关键词>
+
+apt list --installed | grep <关键词>
+
+apt-get --purge <software name> && apt-get autoremove
+
+# 如果没有移除，继续执行
+aptitude remove <software name>
+
+```
