@@ -80,6 +80,43 @@ export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
+### Maven Installation
+* Download the maven package and put it into /Download<br>
+  Query the version you expect: https://maven.apache.org/download.cgi
+  ```sh
+  wget http://artfiles.org/apache.org/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+  # You should be certain which version of maven you want and use that version url instead of the url above
+  ```
+* tar the maven into the /opt<br>
+  ```sh
+  tar -xzvf apache-maven-3.6.0-bin.tar.gz
+  ```
+* Configure the M2_HOME<br>
+  ```sh
+  export M2_HOME=/usr/local/apache-maven/apache-maven-3.0.x
+  # By inputting above command, you will configure M2_HOME, you need to use the location of your maven instead of above address: /usr/local/apache-maven/apache-mave-3.0.x
+  echo $M2_HOME
+
+  # Add the M2 environment variable
+  export M2=$M2_HOME/bin
+
+  # Add the M2 environment variable to path
+  export PATH=$M2:$PATH
+
+  # Make sure that JAVA_HOME is set to the location of your JDK. For example
+  # Make sure that $JAVA_HOME/bin is in your PATH environment variable
+
+  # Execute below command will show maven version
+  mvn -v
+  ```
+  For more detail, just refer to [here](https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.2.1/html/installation_on_jboss_eap/install_maven).
+
+
+  
+
+
+  
+
 
 
 
