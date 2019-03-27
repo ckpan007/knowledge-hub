@@ -18,6 +18,16 @@ uanme -i
 
 cat /proc/version
 ```
+## User management
+
+### Query how many users
+
+```sh
+less /etc/passwd | grep <username>
+
+getent passwd | grep <username>
+
+```
 
 
 ## Switch directory using pushd&dirs

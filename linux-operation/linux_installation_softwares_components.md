@@ -103,6 +103,13 @@ export PATH=$JAVA_HOME/bin:$PATH
   # Add the M2 environment variable to path
   export PATH=$M2:$PATH
 
+  vim .bashrc 
+  # Add all the export into the .bashrc
+    # export M2_HOME=/opt/apache-maven-3.6.0/
+    # export M2=$M2_HOME/bin
+    # export PATH=$M2:$PATH
+  source .bashrc
+
   # Make sure that JAVA_HOME is set to the location of your JDK. For example
   # Make sure that $JAVA_HOME/bin is in your PATH environment variable
 
