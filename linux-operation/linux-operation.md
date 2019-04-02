@@ -197,3 +197,9 @@ apt-get --purge <software name> && apt-get autoremove
 aptitude remove <software name>
 
 ```
+
+
+# Check VT-x or AMD-v virtualization 
+```sh
+egrep --color 'vmx|svm' /proc/cpuinfo
+```
