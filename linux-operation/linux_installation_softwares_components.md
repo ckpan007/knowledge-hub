@@ -204,6 +204,24 @@ If you meet error by running above commands, you can try below:
 ```
   
 
+# VirualBox Installation
+```sh
+apt-get update
+apt-get upgrade
+
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+
+add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian xenial contrib"
+
+apt-get update
+
+apt-get install virtualbox
+
+
+
+```
 
   
 
