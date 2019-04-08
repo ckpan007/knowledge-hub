@@ -3,6 +3,15 @@ This is for linux operation usage.
 
 # Linux Operation
 
+## ssh connection
+
+### Install openssh-server
+```sh
+apt-get install openssh-server
+# optional- install openssh-client
+
+```
+
 ## Linux version
 
 ```sh

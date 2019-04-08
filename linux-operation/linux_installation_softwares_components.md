@@ -1,7 +1,7 @@
 # For RedHat Enterprise
 
 
-## Install Docker CE
+## Install Docker CE - RHEL
 
 ### Install using the repository
 ```sh
@@ -11,7 +11,6 @@ yum install -y yum-utils \
 device-mapper-persistent-data \
 lvm2
 ```
-
 
 ```sh
 #Step2: Set up the stable repository
@@ -28,7 +27,6 @@ sudo yum-config-manager --enable docker-ce-test
 sudo yum-config-manager --disable docker-ce-nightly
 ```
 
-
 ### Install Docker CE
 ```sh
  yum install docker-ce docker-ce-cli containerd.io
@@ -41,7 +39,6 @@ sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> conta
 
 ```
 
-
 ### Start docker
 ```sh
 systemctl start docker
@@ -49,6 +46,38 @@ docker run hello-world
 ```
 
 
+
+## Install Docker CE - Ubuntu
+```sh
+# update package repository
+apt package index
+apt-get update
+
+# install package to allow apt uses repository via https
+apt-get install \
+apt-transport-https \
+ca-certificates \
+curl \
+software-properties-common
+
+# add official docker GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg |sudo apt-key add -
+
+# finger point
+apt-key fingerprint 0EBFCD88
+
+# install stable repository
+add-apt-repository \
+"deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) \
+ stable"
+
+# start to install docker-CE
+apt-get update
+apt-get install docker-ce
+
+
+```
 
 ## Linux Monitoring Tools
 
