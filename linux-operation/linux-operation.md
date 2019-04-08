@@ -216,3 +216,10 @@ aptitude remove <software name>
 ```sh
 egrep --color 'vmx|svm' /proc/cpuinfo
 ```
+
+
+# USTC Mirrors
+https://mirrors.ustc.edu.cn/
+<br>
+https://mirrors.ustc.edu.cn/kubernetes/apt/pool/
+

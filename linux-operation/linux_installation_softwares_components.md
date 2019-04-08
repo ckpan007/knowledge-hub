@@ -75,7 +75,21 @@ $(lsb_release -cs) \
 # start to install docker-CE
 apt-get update
 apt-get install docker-ce
+```
 
+### Accelarate docker
+```sh
+# Reference to link: https://www.jianshu.com/p/18441c7434a6
+
+# Add new file under /etc/docker/daemon.json
+vi /etc/docker/daemon.json
+#Add below content:
+{
+  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
+}
+
+# Restart the docker service:
+sudo /etc/init.d/docker restart
 
 ```
 
@@ -148,7 +162,7 @@ export PATH=$JAVA_HOME/bin:$PATH
   For more detail, just refer to [here](https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.2.1/html/installation_on_jboss_eap/install_maven).
 
 
-# Kubernates
+# Kubernetes
 
 ## Installation for Ubuntu
 ```sh
