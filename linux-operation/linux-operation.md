@@ -74,6 +74,10 @@ yum remove <package name> # rmove package
 ## Monitoring
 ### Monitoring - Sysstat
 ```sh
+
+# installation
+apt-get install sysstat
+
 # Monitoring sar data collection
 pushd /var/log/sar
 less sar1
