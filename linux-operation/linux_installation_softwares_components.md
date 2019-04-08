@@ -82,7 +82,9 @@ apt-get install docker-ce
 # Reference to link: https://www.jianshu.com/p/18441c7434a6
 
 # Add new file under /etc/docker/daemon.json
+
 vi /etc/docker/daemon.json
+
 #Add below content:
 {
   "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
@@ -151,12 +153,14 @@ export PATH=$JAVA_HOME/bin:$PATH
     # export M2_HOME=/opt/apache-maven-3.6.0/
     # export M2=$M2_HOME/bin
     # export PATH=$M2:$PATH
+
   source .bashrc
 
   # Make sure that JAVA_HOME is set to the location of your JDK. For example
   # Make sure that $JAVA_HOME/bin is in your PATH environment variable
 
   # Execute below command will show maven version
+
   mvn -v
   ```
   For more detail, just refer to [here](https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.2.1/html/installation_on_jboss_eap/install_maven).
@@ -177,7 +181,9 @@ sudo apt-key add gpg
 # If above still cannot resolve your issue, perhaps it is because of the ISP(Internet service provider)
 # For China, becasue we cannot reach google, so that we shall need to use USTC(中国科学技术大学) mirror to install kubectl etc.
 # use deb http://mirrors.ustc.edu.cn/kubernetes/apt kubernetes-xenial main instead of deb https://apt.kubernetes.io/ kubernetes-xenial main
+
 vi /etc/apt/sources.list.d/kubernetes.list
+
 # remove existing source of kubenetes and add deb http://mirrors.ustc.edu.cn/kubernetes/apt kubernetes-xenial main 
 # more links reference to https://zhuanlan.zhihu.com/p/46341911 and https://blog.csdn.net/suresand/article/details/82321453
 
