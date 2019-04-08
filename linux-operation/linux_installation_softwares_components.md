@@ -148,6 +148,40 @@ export PATH=$JAVA_HOME/bin:$PATH
   For more detail, just refer to [here](https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.2.1/html/installation_on_jboss_eap/install_maven).
 
 
+# Kubernates
+
+## Installation for Ubuntu
+```sh
+sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+# If you meets error by running above CURL commands, you can try below:
+# Reference to link: https://forums.docker.com/t/error-gpg-no-valid-openpgp-data-found/3857
+wget https://yum.dockerproject.org/gpg
+sudo apt-key add gpg
+
+# If above still cannot resolve your issue, perhaps it is because of the ISP(Internet service provider)
+# For China, becasue we cannot reach google, so that we shall need to use USTC(中国科学技术大学) mirror to install kubectl etc.
+# use deb http://mirrors.ustc.edu.cn/kubernetes/apt kubernetes-xenial main instead of deb https://apt.kubernetes.io/ kubernetes-xenial main
+vi /etc/apt/sources.list.d/kubernetes.list
+# remove existing source of kubenetes and add deb http://mirrors.ustc.edu.cn/kubernetes/apt kubernetes-xenial main 
+# more links reference to https://zhuanlan.zhihu.com/p/46341911 and https://blog.csdn.net/suresand/article/details/82321453
+
+
+# continue with below command
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+
+# Because of unauthenticated mirror, so you need to install kubectl without -y
+sudo apt-get install kubectl
+sudo apt-get install kubelet kubeadm kubernetes-cni
+```
+### Trouble shooting
+If you meet error by running above commands, you can try below:
+```sh
+
+```
   
 
 
