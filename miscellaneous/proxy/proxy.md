@@ -6,3 +6,7 @@ https://www.freeluffy.com/vultr-vps-ss/
 <br>
 
 https://www.hellojava.club/article/27
+
+
+# Good proxy plugin
+SwitchyOmega

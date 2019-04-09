@@ -154,6 +154,7 @@ ps -C java -L -o pid,tid,pcpu,state,nlwp,args #显示所有的Java运行程序�
 # Kill a Task Without Exiting From Top – Press k
 # Renice a Unix Process Without Exiting From Top – Press r
 # Display Selected User in Top Output Using top -u
+
 top -u root
 
 # Display Only Specific Process with Given PIDs Using top -p
@@ -191,8 +192,6 @@ docker contaienr ls -a
 ```
 
 
-
-
 # Ubuntu
 
 ## Package Management
@@ -209,12 +208,29 @@ apt-get --purge <software name> && apt-get autoremove
 # 如果没有移除，继续执行
 aptitude remove <software name>
 
+# Installation of a package
+dpkg -i PACKAGE_NAME
+# Resolve the dependency if the error related with dependency show itself
+sudo apt-get install -f
+
+# Remove a package
+sudo dpkg -r PACKAGE_NAME
+
+# Reconfigure an existing package
+sudo dpkg-reconfigure PACKAGE_NAME
+
+# For more detail see https://askubuntu.com/questions/40779/how-do-i-install-a-deb-file-via-the-command-line
+
 ```
 
 
 # Check VT-x or AMD-v virtualization 
 ```sh
 egrep --color 'vmx|svm' /proc/cpuinfo
+
+# https://unix.stackexchange.com/questions/89714/easy-way-to-determine-virtualization-technology
+sudo lshw -class system
+
 ```
 
 

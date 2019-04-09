@@ -168,7 +168,78 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 # Kubernetes
 
-## Installation for Ubuntu
+## Prerequisites
+
+* docker-ce
+
+## Declaration
+
+Please refer to [Here](https://stackoverflow.com/questions/42294304/minikube-install-in-ubuntu-vm-vt-x-amd-v-enabling-to-vm-inside-another-vm) for much more information.
+From above we realize that: 
+* Virtual Box does not support VT-X/AMD-v in nested virtualisation. See this open ticket/feature request on virtualbox.org.
+
+### Possible solutions:
+
+* Use a different hypervisor that does support VT-X/AMD-v in nested virtualisation (like Xen, KVM or VMware).
+* Install Minikube on the host OS and not in a VM.
+
+So that we cannot run _minikube start_ within a vm which is also running in vmware workstation (不能在一个虚机上再次安装virtualbox，然后运行minikube start).
+<br>
+You can **directly** run _minikube start_ **in your host**, **or** you can run **minikube start --vm-driver=none** to run minikube not using virtualbox.
+Also you can run **minikube config set vm-driver none** to set the minikube to run in none vm driver mode (this will try running minikube without nested virtualization (docker should be installed).
+
+
+
+## Installation for Ubuntu OS in China - 1
+
+```sh
+# Ensure you open the Hyper-V
+
+# Because of unauthenticated mirror, so you need to install kubectl without -y
+
+sudo apt-get install kubectl
+sudo apt-get install kubelet kubeadm kubernetes-cni
+```
+
+```sh
+# You need to use USTC to download the .deb package files, keep in mind that the version for kubectl, kubelet, kubeadm should be the same version
+# And also for the .deb file should be .amd64 but not .arf64
+
+curl -LO https://mirrors.ustc.edu.cn/kubernetes/apt/pool/kubelet_1.14.0-00_amd64_a0b145a6601fb6c03c8f401d65c5c94cc75bf17bc7a19a00fdff44a17b6e230f.deb
+curl -LO https://mirrors.ustc.edu.cn/kubernetes/apt/pool/kubectl_1.14.0-00_amd64_f6aa3b36f039aa9ce3614c08978ecbdff0900c7fc966bde6647c5d5b969dfabc.deb
+curl -LO https://mirrors.ustc.edu.cn/kubernetes/apt/pool/kubeadm_1.14.0-00_amd64_37d071fc4060e54bd626faae826e8ab2750a7cb6bf90d189cea52453677df80a.deb
+
+dpkg -i kubectl_1.14.0-00_amd64_f6aa3b36f039aa9ce3614c08978ecbdff0900c7fc966bde6647c5d5b969dfabc.deb
+
+dpkg -i kubeadm_1.14.0-00_amd64_37d071fc4060e54bd626faae826e8ab2750a7cb6bf90d189cea52453677df80a.deb
+
+# You meet error here and now you need to resolve the dependency
+
+apt-get install -f
+
+dpkg -i kubelet_1.14.0-00_amd64_a0b145a6601fb6c03c8f401d65c5c94cc75bf17bc7a19a00fdff44a17b6e230f.deb
+
+# After you complete the installation of the three components, then start to install minikube
+# Refer to https://yangmingxiong.com/ for the minikube installation. By the way minikube version does not need to be the same with this three components
+
+curl -Lo minikube http://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/releases/v1.0.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+
+# Start the minikube
+
+minikube start --vm-driver=none --registry-mirror=https://registry.docker-cn.com --kubernetes-version v1.14.0
+
+
+# Test the node
+kubectl get nodes -o wide
+
+# Open the dashboard
+
+minikube dashboard
+
+```
+
+## Installation for Ubuntu OS in China - 2
+
 ```sh
 sudo apt-get update && sudo apt-get install -y apt-transport-https
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -190,13 +261,15 @@ vi /etc/apt/sources.list.d/kubernetes.list
 
 # continue with below command
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+
+# change echo if you changed the sources.list.d
+echo "deb http://mirrors.ustc.edu.cn/kubernetes/apt kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+
 sudo apt-get update
 sudo apt-get install -y kubectl
-
-# Because of unauthenticated mirror, so you need to install kubectl without -y
-sudo apt-get install kubectl
-sudo apt-get install kubelet kubeadm kubernetes-cni
 ```
+
+
 ### Trouble shooting
 If you meet error by running above commands, you can try below:
 ```sh
@@ -205,6 +278,8 @@ If you meet error by running above commands, you can try below:
   
 
 # VirualBox Installation
+
+
 ```sh
 apt-get update
 apt-get upgrade
@@ -219,8 +294,69 @@ apt-get update
 
 apt-get install virtualbox
 
+```
+
+## Virtualbox installation for RHEL
+```sh
+# Please refer to https://www.itzgeek.com/how-tos/linux/centos-how-tos/install-virtualbox-4-3-on-centos-7-rhel-7.html for more detail
+
+# Update the system to the latest version.
+
+yum update
+# Reboot the system.
+
+reboot
+# Once the system is up, install header and development tools.
+
+yum install -y kernel-devel kernel-headers gcc make perl
+# Also, install the wget package to download items using the terminal.
+
+yum -y install wget
+# Download the Oracle public key.
+
+wget https://www.virtualbox.org/download/oracle_vbox.asc
+
+# Import Oracle public key.
+
+rpm --import oracle_vbox.asc
+
+# Download the VirtualBox repository file for CentOS 7 / RHEL 7 and move it into /etc/yum.repos.d/ directory.
+
+ wget http://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo -O /etc/yum.repos.d/virtualbox.repo
+
+# OR
 
 
+# Create the /etc/yum.repos.d/virtualbox.repo file with the following repository information.
+
+```
+[virtualbox]
+name=Oracle Linux / RHEL / CentOS-$releasever / $basearch - VirtualBox
+baseurl=http://download.virtualbox.org/virtualbox/rpm/el/$releasever/$basearch
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://www.virtualbox.org/download/oracle_vbox.asc
+```
+
+Install VirtualBox using the yum command.
+```
+
+```sh
+yum install -y VirtualBox-6.0
+```
+
+VirtualBox v5.2:
+
+
+```sh
+yum install -y VirtualBox-5.2
+```
+
+Run the below command to check the status of VirtualBox Linux kernel module service.
+
+```sh
+systemctl status vboxdrv
 ```
 
   
