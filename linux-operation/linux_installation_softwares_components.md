@@ -236,6 +236,12 @@ kubectl get nodes -o wide
 
 minikube dashboard
 
+
+# The console will display information about dashboard api:
+# http://127.0.0.1:38643/api/v1/namespaces/kube-system/services/http:kubernetes-dashboard:/proxy/#!/overview?namespace=default
+# Open the browser and access that url you will see the overview page of kubernetes
+
+
 ```
 
 ## Installation for Ubuntu OS in China - 2
