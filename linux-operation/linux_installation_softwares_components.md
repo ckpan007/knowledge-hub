@@ -192,6 +192,8 @@ Also you can run **minikube config set vm-driver none** to set the minikube to r
 
 ## Installation for Ubuntu OS in China - 1
 
+### Official for outside network
+
 ```sh
 # Ensure you open the Hyper-V
 
@@ -200,6 +202,8 @@ Also you can run **minikube config set vm-driver none** to set the minikube to r
 sudo apt-get install kubectl
 sudo apt-get install kubelet kubeadm kubernetes-cni
 ```
+
+### Install kubectl via USTC within China
 
 ```sh
 # You need to use USTC to download the .deb package files, keep in mind that the version for kubectl, kubelet, kubeadm should be the same version
@@ -218,6 +222,12 @@ dpkg -i kubeadm_1.14.0-00_amd64_37d071fc4060e54bd626faae826e8ab2750a7cb6bf90d189
 apt-get install -f
 
 dpkg -i kubelet_1.14.0-00_amd64_a0b145a6601fb6c03c8f401d65c5c94cc75bf17bc7a19a00fdff44a17b6e230f.deb
+
+```
+
+### Install minikube using Aliyun within China
+
+```sh
 
 # After you complete the installation of the three components, then start to install minikube
 # Refer to https://yangmingxiong.com/ for the minikube installation. By the way minikube version does not need to be the same with this three components
