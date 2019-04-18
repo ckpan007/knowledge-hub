@@ -27,7 +27,17 @@ Download URL: https://www.raymond.cc/blog/download/did/3776/
 
 ## Notepad ++
 
+### Notepad Enable Silent Updates
+![Notepad Enable Silent Updates](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/windows-operation/notepad_enable_silent_updtes.png)
 
+### Notepad++ Monitoring In The Background
+![Notepad Install Document Monitor](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/windows-operation/install_document_monitor.png)
+
+## Monitoring From PowerShell
+![PowerShell Get Content Tail](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/windows-operation/powershell_get-content_tail.png)
+
+## Monitoring From Command Line
+![Monitoring From Command Line](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/windows-operation/command_prompt_tail.png)
 
 
 # Reference Links

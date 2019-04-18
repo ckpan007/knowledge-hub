@@ -232,6 +232,14 @@ sysctl -w vm.max_map_count=262144
 
 ```
 
+## wget download with log
+```sh
+wget -o <log file name> <download url>
+
+tail -f <log file name>
+
+```
+
 ## View log in Real time
 ```sh
 tail -f <your log file>
