@@ -26,10 +26,22 @@ sudo systemctl enable elasticsearch.service
 ```
 
 
+## Installation with docker
+Elasticsearch is also available as Docker images. The images use centos:7 as the base image.
 
+Firstly you need to find the correct elasticsearch docker image from [docker elasticsearch repo](https://www.docker.elastic.co/#).
+
+### Pulling the image
+```sh
+docker pull docker.elastic.co/elasticsearch/elasticsearch:7.0.0
+
+```
+For much more detail you can go to [Install Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker).
 
 # Reference Links
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04
+
+https://dzone.com/articles/install-elasticsearch-on-ubuntu-18041
 
 
