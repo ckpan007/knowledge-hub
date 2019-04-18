@@ -16,6 +16,21 @@ bcdedit /set hypervisorlaunchtype off
 ```
 Then just restart the computer will solve the issue.
 
+
+# Monitor Log or Text File Changes in Real Time
+
+## mTail
+Download URL: https://www.raymond.cc/blog/download/did/3776/
+
+
+## SnakeTail
+
+## Notepad ++
+
+
+
+
 # Reference Links
 https://stackoverflow.com/questions/39858200/vmware-workstation-and-device-credential-guard-are-not-compatible
  
+

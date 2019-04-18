@@ -18,7 +18,7 @@ cd elasticsearch-7.0.0/bin
 ## Installation on Ubuntu - wget
 You can go to [ES download page](https://www.elastic.co/downloads/past-releases) to seek for the specified release.
 ```sh
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-amd64.deb  
+wget -o log https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-amd64.deb  
 sudo dpkg -i elasticsearch-2.3.4.deb
 
 # To make sure Elasticsearch starts and stops automatically with the server, add its init script to the default runlevels.
@@ -43,5 +43,9 @@ For much more detail you can go to [Install Elasticsearch with Docker](https://w
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04
 
 https://dzone.com/articles/install-elasticsearch-on-ubuntu-18041
+
+https://my.oschina.net/yimingkeji/blog/2978993
+
+https://www.cnblogs.com/showtime813/p/5710829.html
 
 

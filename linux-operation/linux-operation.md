@@ -192,6 +192,7 @@ docker contaienr ls -a
 ```
 
 
+
 # Ubuntu
 
 ## Package Management
@@ -222,6 +223,51 @@ sudo dpkg-reconfigure PACKAGE_NAME
 # For more detail see https://askubuntu.com/questions/40779/how-do-i-install-a-deb-file-via-the-command-line
 
 ```
+
+## Change VM Max Map Count
+```sh
+cat /proc/sys/vm/max_map_count
+
+sysctl -w vm.max_map_count=262144
+
+```
+
+## View log in Real time
+```sh
+tail -f <your log file>
+tailf <your log file>
+# The tail -F will keep track if new log file being created and will start following the new file instead of the old file.
+tail -F <your log file>
+
+# You can also use less +F
+$ sudo less +F  /var/log/apache2/access.log
+```
+
+### Using Mutltitail
+
+To install mulitail utility in Debian and RedHat based systems issue the below command.
+```sh
+$ sudo apt install multitail   [On Debian & Ubuntu]
+$ sudo yum install multitail   [On RedHat & CentOS]
+$ sudo dnf install multitail   [On Fedora 22+ version]
+
+# To display the output of two log file simultaneous, execute the command as shown in the below example.
+multitail /var/log/apache2/access.log /var/log/apache2/error.log
+
+```
+
+### Using lnav Command 
+```sh
+# Lnav utility can also watch and follow multiple files and display their content in real time.
+
+$ sudo apt install lnav   [On Debian & Ubuntu]
+$ sudo yum install lnav   [On RedHat & CentOS]
+$ sudo dnf install lnav   [On Fedora 22+ version]
+
+
+$ sudo lnav /var/log/apache2/access.log /var/log/apache2/error.log
+```
+
 
 
 # Check VT-x or AMD-v virtualization 
