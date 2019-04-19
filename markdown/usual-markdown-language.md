@@ -1,3 +1,6 @@
+# Image included in PDF
+Change the full path of the image to the relative path, similar like this: ![门洞过梁](../zResources/mendongguoliang.jpg)
+
 
 
 ```
