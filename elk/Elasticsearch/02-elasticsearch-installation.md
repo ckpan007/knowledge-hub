@@ -6,11 +6,10 @@ The installation of Elasticsearch can be distributed into two parts:
 ## ES release references page
 https://www.elastic.co/guide/en/elasticsearch/reference
 <br>
-For above you can get all the released ES. You should choose a specified version to install.
+For above you can get all the released ES. You should choose a specified version to install.<br>
+http://www.elastic.co/downloads
+For above it is a similar page.
 
-
-## Install Elasticesearch via binary
-Download URL as http://www.elastic.co/downloads along with all the releases have been made in the past.
 
 ## Installation on Ubuntu - tar
 ```sh
