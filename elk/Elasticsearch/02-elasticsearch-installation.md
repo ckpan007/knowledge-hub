@@ -58,6 +58,9 @@ Firstly you need to find the correct elasticsearch docker image from [docker ela
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.0.0
 docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.0.0
 
+
+curl http://127.0.0.1:9200/_cat/health
+
 # Then just access http://localhost:9200/
 
 ```
@@ -97,14 +100,38 @@ sudo sysctl -w vm.max_map_count=262144
 ```
 
 
+### Inspect the status of cluster
+```sh
+curl http://127.0.0.1:9200/_cat/health
+
+```
+
+
+## Mount the host's directory containing the elasticsearch.yml into the container
+This is only applied to Linux. For more detail please check [Here in Stackflow](https://stackoverflow.com/questions/49751843/how-to-edit-elasticsearch-yml-in-a-docker-container).
+
+```
+services:
+   elasticsearch:
+      volumes:
+        - path_to/custom_elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+```
+
+## Modify directly a relevant Dockerfile with the syntax
+```
+USER root
+RUN echo "indices.query.bool.max_clause_count: 1000000" >> /usr/share/elasticsearch/config/elasticsearch.yml
+```
 
 
 
-
-
+# Elasticsearch in Docker
+https://docs.docker.com/samples/library/elasticsearch/
 
 
 # Reference Links
+Elasticsearch Repo: https://github.com/elastic/elasticsearch
+<br>
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04
 
