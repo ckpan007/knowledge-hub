@@ -11,7 +11,7 @@ $ yum install nload -y
 $ sudo apt-get install nload 
 ```
 
-![Nload](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/nload.jpg)
+![Nload](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/nload.jpg)
 
 ### bmon
 ```sh
@@ -20,7 +20,7 @@ $ sudo apt-get install bmon
 # fedora或centos（来自repoforge） 
 $ sudo yum install bmon 
 ```
-![bmon](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/bmon.jpg)
+![bmon](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/bmon.jpg)
 
 
 ### bwm-ng
@@ -33,13 +33,13 @@ $ sudo apt-get install bwm-ng
 
 bwm-ng
 ```
-![bwm-ng](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/bwm-ng.jpg)
+![bwm-ng](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/bwm-ng.jpg)
 
 ##  cbm：Color Bandwidth Meter
 ```sh
 apt-get install cbm
 ```
-![cbm](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/cbm.jpg)
+![cbm](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/cbm.jpg)
 
 
 ### speedometer
@@ -53,7 +53,7 @@ ifcofnig
 # -r监控入 -t监控出
 speedometer -r <网卡名称> -t <网卡名称>
 ```
-![speedometer](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/speedometer.png)
+![speedometer](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/speedometer.png)
 
 
 
@@ -109,7 +109,7 @@ $ sudo apt-get install iptraf iptraf-ng
 iftop -n
 
 ```
-![iftop](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/iftop.jpg)
+![iftop](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/iftop.jpg)
 
 
 ### iptraf
@@ -121,7 +121,7 @@ $ yum install iptraf-ng -y
 # ubuntu或debian 
 $ sudo apt-get install iptraf iptraf-ng 
 ```
-![iftraf](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/iftraf.jpg)
+![iftraf](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/iftraf.jpg)
 
 ### tcptrack
 tcptrack类似iftop，使用pcap库来捕获数据包，并计算各种统计信息，比如每个连接所使用的带宽。它还支持标准的pcap过滤器，这些过滤器可用来监控特定的连接。
@@ -132,7 +132,7 @@ $ sudo apt-get install tcptrack
 $ sudo yum install tcptrack 
 ```
 
-![tcptrack](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/tcptrack.jpg)
+![tcptrack](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/tcptrack.jpg)
 
 ### pktstat
 可以实时显示所有活动连接，并显示哪些数据通过这些活动连接传输的速度。它还可以显示连接类型，比如TCP连接或UDP连接；如果涉及HTTP连接，还会显示关于HTTP请求的详细信息。
@@ -140,7 +140,7 @@ $ sudo yum install tcptrack
 $ sudo pktstat -i eth0 -nt 
 $ sudo apt-get install pktstat 
 ```
-![pktstat](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/pktstatjpg)
+![pktstat](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/pktstatjpg)
 
 
 
@@ -153,5 +153,5 @@ $ sudo apt-get install nethogs
 # fedora或centos（来自epel） 
 $ sudo yum install nethogs -y
 ```
-![nethogs](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-data-flow-monitoring/nethogs.jpg)
+![nethogs](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/nethogs.jpg)
 
