@@ -3,10 +3,16 @@ The installation of Elasticsearch can be distributed into two parts:
 * Use Elasticesearch hosted service on Elastic Cloud in AWS and GCP
 * Install Elasticsearch via binary
 
+## ES release references page
+https://www.elastic.co/guide/en/elasticsearch/reference
+<br>
+For above you can get all the released ES. You should choose a specified version to install.
+
+
 ## Install Elasticesearch via binary
 Download URL as http://www.elastic.co/downloads along with all the releases have been made in the past.
 
-## Installation on Ubuntu - Official
+## Installation on Ubuntu - tar
 ```sh
 curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz
 tar -xvf elasticsearch-7.0.0-linux-x86_64.tar.gz
@@ -14,10 +20,23 @@ cd elasticsearch-7.0.0/bin
 ./elasticsearch
 
 ```
+## Installation on Ubuntu - apt install
+```sh
+# Import the ES PGP key
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 
-## Installation on Ubuntu - wget
+apt-get install apt-transport-https
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+apt-get update && sudo apt-get install elasticsearch
+
+
+```
+
+## Installation on Ubuntu - deb
+
 You can go to [ES download page](https://www.elastic.co/downloads/past-releases) to seek for the specified release.
 ```sh
+
 wget -o log https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-amd64.deb  
 sudo dpkg -i elasticsearch-2.3.4.deb
 
@@ -53,9 +72,11 @@ Elasticsearch is also available as Docker images. The images use centos:7 as the
 
 Firstly you need to find the correct elasticsearch docker image from [docker elasticsearch repo](https://www.docker.elastic.co/#).
 
-### Pulling the image
+### Pulling the image and run
+
 ```sh
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.0.0
+
 docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.0.0
 
 
@@ -106,7 +127,6 @@ curl http://127.0.0.1:9200/_cat/health
 
 ```
 
-
 ## Mount the host's directory containing the elasticsearch.yml into the container
 This is only applied to Linux. For more detail please check [Here in Stackflow](https://stackoverflow.com/questions/49751843/how-to-edit-elasticsearch-yml-in-a-docker-container).
 
@@ -124,6 +144,14 @@ RUN echo "indices.query.bool.max_clause_count: 1000000" >> /usr/share/elasticsea
 ```
 
 
+
+
+## Installation using zip file
+After you specifying the release number, now it is time to get the zip file.
+```sh
+wget -o log https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-windows-x86_64.zip
+
+```
 
 # Elasticsearch in Docker
 https://docs.docker.com/samples/library/elasticsearch/
