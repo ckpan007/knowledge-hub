@@ -140,7 +140,7 @@ $ sudo yum install tcptrack
 $ sudo pktstat -i eth0 -nt 
 $ sudo apt-get install pktstat 
 ```
-![pktstat](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/pktstatjpg)
+![pktstat](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/linux-dataflow-monitoring/pktstat.jpg)
 
 
 
