@@ -36,20 +36,12 @@ Open up a shell and set this all important variable:
 export ES_HOME=/usr/share/elasticsearch
 ```
 
-### Set LOG_DIR, DATA_DIR,  CONF_DIR
-But ES_HOME doesn’t have the final say. Elasticsearch will use other directories for logs, data, and configuration. Indeed, in my debian package install of Elasticsearch, I have files flung all over /var and /etc. Let’s set those environment variables as well.
-```sh
-export LOG_DIR=/var/log/elasticsearch
-export DATA_DIR=/var/lib/elasticsearch
-export CONF_DIR=/etc/elasticsearch
-```
-
 ### Set ES_PATH_CONF
 ```sh
 export ES_PATH_CONF=/etc/elasticsearch
 ```
 
-### Run ES
+### Run ES -Meet error because of root role - 此步骤遇到错误，只是为了扩展视野
 ```sh
 cd $ES_HOME
 
@@ -62,10 +54,61 @@ org.elasticsearch.bootstrap.StartupException: java.lang.RuntimeException: can no
 
 ```
 
+### Create elasticsearch user to run ES
+
+#### Create elsearch user and group elsearch
+```sh
+groupadd elsearch
+useradd elsearch -g elsearch -p elasticsearch
+```
+
+#### Change group and owner for elasticsearch
+```sh
+cd $ES_HOME/bin
+chown -R elsearch:elsearch  elasticsearch
+
+```
+
+#### Change permission for below directories
+```sh
+1. Grant +x for all users
+elsearch@ubuntu:/usr/share/elasticsearch/bin$ chmod +x elasticsearch
+
+2. Change owner of /etc/elasticsearch from root to elsearch
+
+elsearch@ubuntu: cd /etc
+elsearch@ubuntu:/etc$ sudo chown -R elsearch:elsearch  elasticsearch
+
+3. Change owner of /etc/default from root to elsearch
+elsearch@ubuntu:/etc/default$ sudo chown -R elsearch:elsearch  elasticsearch
+
+4. Change owner of /var/log/elasticsearch from root to elsearch
+elsearch@ubuntu:/var/log$ sudo chown -R elsearch:elsearch  elasticsearch
+
+5. Change owner of /var/lib/elasticsearch from root to elsearch
+elsearch@ubuntu:/var/lib$ sudo chown -R elsearch:elsearch  elasticsearch
+
+由于实验关系，其实到这里可以表明默认安装ES的时候，其实是默认创建了用户elasticsearch，其实这里不需要创建另外一个新的用户elsearch，只需要更改相关的目录的所有者由root到elasticsearch，理论上是可行的。
+```
+
+#### Run ES as user elasticsearch
+```sh
+cd $ES_HOME
+
+./bin/elasticsearch
+
+其实到这里，不需要./bin/elasticsearch后追加任何参数，因为默认的ES的配置文件存放在/etc/elasticsearch/elasticsearch.yml中，只要配置好了相关权限之后，那么系统会自动的检索相关配置文件并运行
+```
 
 
 
-
+### Set LOG_DIR, DATA_DIR,  CONF_DIR
+But ES_HOME doesn’t have the final say. Elasticsearch will use other directories for logs, data, and configuration. Indeed, in my debian package install of Elasticsearch, I have files flung all over /var and /etc. Let’s set those environment variables as well.
+```sh
+export LOG_DIR=/var/log/elasticsearch
+export DATA_DIR=/var/lib/elasticsearch
+export CONF_DIR=/etc/elasticsearch
+```
 
 ### Run ES in command line (not runnable -deprecated)
 ```sh
