@@ -124,6 +124,10 @@ add-apt-repository ppa:webupd8team/java
 apt-get update && apt-get upgrade
 apt-get install default-jdk
 
+java
+javac
+
+
 
 ```
 ### Installation on RHEL
