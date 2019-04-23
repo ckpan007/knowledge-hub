@@ -112,6 +112,20 @@ yum install sysstat
 
 
 ## Java
+### Installation Default JDK on Ubuntu
+https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04
+For oracle jdk 8, please refer to [Here](http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html).
+<br>
+```sh
+apt-get update
+add-apt-repository ppa:webupd8team/java
+# Install default jdk
+
+apt-get update && apt-get upgrade
+apt-get install default-jdk
+
+
+```
 ### Installation on RHEL
 #### Install OpenJDK 8 JRE
 ```sh
