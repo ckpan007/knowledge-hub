@@ -25,7 +25,9 @@ Please refer to this [link](https://opensourceconnections.com/blog/2016/04/21/ru
 First things first. The most important thing when setting up Elasticsearch is to set your ES_HOME. **ES_HOME** is an environment variable pointing **where Elasticsearch is installed**. If no other settings are specified, Elasticsearch operates **solely out of this directory**. 
 <br>
 For Debain package installation, the default installation directory of ES is as below:
-![Default ES Installation directory]()
+![Default ES Installation directory](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/elasticsearch/default-installation-es.jpg)
+
+Elasticsearch defaults to using /etc/elasticsearch for runtime configuration. Elasticsearch loads its configuration from the _/etc/elasticsearch/elasticsearch.yml_ file by default. The Debian package also has a system configuration file (_/etc/default/elasticsearch_).
 
 <br>
 Open up a shell and set this all important variable:
