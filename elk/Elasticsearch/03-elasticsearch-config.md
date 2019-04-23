@@ -27,7 +27,7 @@ First things first. The most important thing when setting up Elasticsearch is to
 For Debain package installation, the default installation directory of ES is as below:
 ![Default ES Installation directory](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/elasticsearch/default-installation-es.jpg)
 
-Elasticsearch defaults to using /etc/elasticsearch for runtime configuration. Elasticsearch loads its configuration from the _/etc/elasticsearch/elasticsearch.yml_ file by default. The Debian package also has a system configuration file (_/etc/default/elasticsearch_).
+Elasticsearch defaults to using _/etc/elasticsearch_ for runtime configuration. Elasticsearch loads its configuration from the _/etc/elasticsearch/elasticsearch.yml_ file by default. The Debian package also has a system configuration file (_/etc/default/elasticsearch_).
 
 <br>
 Open up a shell and set this all important variable:
@@ -35,6 +35,44 @@ Open up a shell and set this all important variable:
 ```sh
 export ES_HOME=/usr/share/elasticsearch
 ```
+
+### Set LOG_DIR, DATA_DIR,  CONF_DIR
+But ES_HOME doesn’t have the final say. Elasticsearch will use other directories for logs, data, and configuration. Indeed, in my debian package install of Elasticsearch, I have files flung all over /var and /etc. Let’s set those environment variables as well.
+```sh
+export LOG_DIR=/var/log/elasticsearch
+export DATA_DIR=/var/lib/elasticsearch
+export CONF_DIR=/etc/elasticsearch
+```
+
+### Set ES_PATH_CONF
+```sh
+export ES_PATH_CONF=/etc/elasticsearch
+```
+
+### Run ES
+```sh
+cd $ES_HOME
+
+./bin/elasticsearch -Epath.conf=$ES_PATH_CONF/
+
+## You will meet error as below:
+org.elasticsearch.bootstrap.StartupException: java.lang.RuntimeException: can not run elasticsearch as root
+
+# That means you cannot run elasticsearch as root role, you should create a new user especially for elasticsearch to run ES
+
+```
+
+
+
+
+
+
+### Run ES in command line (not runnable -deprecated)
+```sh
+sudo -u elasticsearch bash -x $ES_HOME/bin/elasticsearch --default.path.home=$ES_HOME --default.path.logs=$LOG_DIR --default.path.data=$DATA_DIR --default.path.conf=$CONF_DIR
+
+```
+
 
 # Directory layout of ES Deb installation
 https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html#deb-layout
