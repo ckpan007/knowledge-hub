@@ -23,6 +23,7 @@ https://github.com/HuangMarco/etcd
 # 系统设计
 https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
 
+# istio, sevice mesh
 
 # Resources
 IT大咖说
