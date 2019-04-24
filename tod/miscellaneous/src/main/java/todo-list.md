@@ -20,6 +20,8 @@ https://github.com/youtube/doorman
 # ETCD
 https://github.com/HuangMarco/etcd
 
+# 系统设计
+https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
 
 
 # Resources
