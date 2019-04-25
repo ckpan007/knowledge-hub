@@ -67,7 +67,10 @@ Here are some interesting pieces of information:
 * [client1_index3]: index name. Obviously, you have to check whether one index causes slow queries. If you have a multi-tenant infrastructure or if your indices carry some temporal logic, you should be able to identify from the index name the time or the client and thus refine your analysis. At Logmatic.io, we extract the client ID from the index, and make sure nobody is experiencing too many slow queries.
 * Source[..]: The query. By looking at it (range, aggregation, …), you could simply identify why your query is slow.
 
-
+## Useful Use cases
+* Index creation log, especially creation time. It is a good indication of your cluster health
+* Index deletion logs
+* Snapshot / restore tasks
 
 # Reference Link
 https://logmatic.io/blog/get-the-most-of-your-elasticsearch-logs/
