@@ -31,6 +31,42 @@ One frequent issue with Elasticsearch is the memory handling. You definitely don
 * Do not over-allocate your nodes (for example, use sharding to balance data across your cluster)
 
 ## Analyse elasticsearch Slow Queries
+Depending on the data typology (heavy documents, multiples indices, …), you may experience performance issues, with slow elasticsearch queries as one of the symptoms.
+Queries with high execution time results in bad user experience, and with the state of the current digital age, we all want to avoid it. The 90’s are long gone.
+
+### Configuration
+Determine the threshold for considering an elasticsearch query slow based on your business and industry, and register it in the elasticsearch.yml config file. You can also set it at runtime.
+<br>
+Setting several thresholds can be useful to monitor elasticsearch performance more finely. At Logmatic.io, our slow query thresholds are the one suggested in the Elasticsearch Slow Log configuration page:
+```
+index.search.slowlog.threshold.query.warn: 10s
+index.search.slowlog.threshold.query.info: 5s 
+index.search.slowlog.threshold.query.debug: 2s
+index.search.slowlog.threshold.query.trace: 500ms
+```
+
+This config is a good start, but the best configuration is always one adapted to your specific workload challenges.
+
+As mentioned previously, these logs go in a dedicated file, ${cluster.name}_index_search_slowlog.log, and you should definitely watch it carefully to ensure optimal elasticsearch performance.
+
+### Elasticsearch slow log format
+Let’s see what a slow log looks like:
+```
+[2016-02-04 16:07:32,964][INFO][index.search.slowlog.query] [vagrant-host] [client1_index3][0] took[5.2s], took_millis[5203],
+types[], stats[], search_type[COUNT], total_shards[3],
+source[{“size”:0,”timeout”:60000,”query”:{“constant_score”:{“filter”:{“range”:{“fsmatic.date”:{“from”:1454599730468,”to”:1454604106092,”include_lower”:true,”include_upper”:false}}}}},”aggregations”:{“time”:{“fast_date_histogram”:{“field”:”fsmatic.date”,”interval”:”30000″,”pre_offset”:”3600000″,”post_offset”:”-3600000″}}}}], extra_source[],
+```
+
+Here are some interesting pieces of information:
+* took[5.2s] Execution time. This is a metric, and a good log analytics tool should let you draw analytics based on it. See our blogpost here if you need some more insights on log-based metrics.
+
+![Query Duration](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/elasticsearch/query-duration.png)
+
+
+* [vagrant-host]: Hostname. Your problems could be caused by one or several specific hosts, so pay attention to this field. At Logmatic.io, we once detected disk failures on one node thanks to elasticsearch slow query logs, and our further investigation showed a latency issue yet undiscovered.
+* [client1_index3]: index name. Obviously, you have to check whether one index causes slow queries. If you have a multi-tenant infrastructure or if your indices carry some temporal logic, you should be able to identify from the index name the time or the client and thus refine your analysis. At Logmatic.io, we extract the client ID from the index, and make sure nobody is experiencing too many slow queries.
+* Source[..]: The query. By looking at it (range, aggregation, …), you could simply identify why your query is slow.
+
 
 
 # Reference Link
