@@ -25,6 +25,40 @@ For current release 7.0.0, the log location is stored in /etc/elasticsearch/elas
 <br>
 And also you can find the _log4j.properties_ file in location _/etc/elasticsearch/log4j2.properties_.
 
-
 ![Var Log](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/elasticsearch/var-log.jpg)
+
+# How to configure log level
+There are four ways to configuring logging levels, each having situations in which they are appropriate to use.
+* Via the command-line - _-E <name of logging hierarchy>=<level>_ (e.g., -E logger.org.elasticsearch.transport=trace). This is most appropriate when you are temporarily debugging a problem on a single node (for example, a problem with startup, or during development).
+* Via elasticsearch.yml - _<name of logging hierarchy>: <level> (e.g., logger.org.elasticsearch.transport: trace)_. This is most appropriate when you are temporarily debugging a problem but are not starting Elasticsearch via the command-line (e.g., via a service) or you want a logging level adjusted on a more permanent basis.
+* Via cluster settings - 
+```
+PUT /_cluster/settings
+{
+  "transient": {
+    "<name of logging hierarchy>": "<level>"
+  }
+}
+
+
+PUT /_cluster/settings
+{
+  "transient": {
+    "logger.org.elasticsearch.transport": "trace"
+  }
+}
+```
+
+* Via the log4j2.properties - This is most appropriate when you need fine-grained control over the logger (for example, you want to send the logger to another file, or manage the logger differently; this is a rare use-case).
+```
+logger.<unique_identifier>.name = <name of logging hierarchy>
+logger.<unique_identifier>.level = <level>
+
+logger.transport.name = org.elasticsearch.transport
+logger.transport.level = trace
+```
+
+# Reference Link
+https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html#configuring-logging-levels
+
 
