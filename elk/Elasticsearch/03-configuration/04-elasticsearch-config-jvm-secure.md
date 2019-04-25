@@ -23,7 +23,7 @@ You can also use _ES_JAVA_OPTS_ to tuning the ES JVM. Much more detail about thi
 # Secure Settings
 
 ## Why you need secure settings?
-You still remember that we run ES by a new user named _elsearch_, acturally this user should be naturally created by ES as user _elasticsearch_. For more detail you can go to check [ES Config](https://github.com/HuangMarco/knowledge-hub/blob/dev/elk/Elasticsearch/03-elasticsearch-config.md#create-elasticsearch-user-to-run-es).
+You still remember that we run ES by a new user named _elsearch_, acturally this user should be naturally created by ES as user _elasticsearch_. For more detail you can go to check [ES Config](https://github.com/HuangMarco/knowledge-hub/blob/dev/elk/Elasticsearch/03-configuration/03-elasticsearch-config.md#create-elasticsearch-user-to-run-es).
 
 <br>
 Under this situation, Elasticsearch provides a keystore and the elasticsearch-keystore tool to manage the settings in the keystore.

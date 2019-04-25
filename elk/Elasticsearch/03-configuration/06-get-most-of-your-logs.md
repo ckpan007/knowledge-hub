@@ -12,7 +12,7 @@ In the same directory, you’ll find other files such as:
 
 You can also tune your elasticsearch log settings: change level for one specific logger, add an output file, … To do so, you basically have two options:
 * Modify the _log4j2.properties_: Modifications will require an rolling restart
-* Use the ES's REST API about reloadable configuration settings, refer to [here](https://github.com/HuangMarco/knowledge-hub/blob/dev/elk/Elasticsearch/04-elasticsearch-config-jvm-secure.md#reload-the-secure-settings-to-make-the-changes-work---important)
+* Use the ES's REST API about reloadable configuration settings, refer to [here](https://github.com/HuangMarco/knowledge-hub/blob/dev/elk/Elasticsearch/03-configuration/04-elasticsearch-config-jvm-secure.md#reload-the-secure-settings-to-make-the-changes-work---important)
 
 For example, if you have the feeling that index creation is taking longer than usual, you can set the logger cluster.service to level DEBUG, and you’ll get the real creation time for each created index in your elasticsearch logs – like this:
 ```
