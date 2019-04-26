@@ -23,3 +23,8 @@ curl -X GET "localhost:9200/_cat/nodes?v"
 
 ```
 
+# List all the indices
+```sh
+curl -X GET "localhost:9200/_cat/indices?v"
+
+```
