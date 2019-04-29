@@ -33,6 +33,8 @@ A document is a basic unit of information that can be indexed. For example, you 
 
 <br>
 For example: you see below for a instance JSON for _account_.
+
+
 ```sh
 '{"name":"John", "lastname":"Doe", "job_description":"Systems administrator and Linux specialit"}'
 ```
