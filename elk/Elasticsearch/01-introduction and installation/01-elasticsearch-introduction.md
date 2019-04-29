@@ -31,6 +31,12 @@ A node is a single server that is part of your cluster, stores your data, and pa
 ## Document
 A document is a basic unit of information that can be indexed. For example, you can have a document for a single customer, another document for a single product, and yet another for a single order. This document is expressed in **JSON** (JavaScript Object Notation) which is a ubiquitous internet data interchange format. Within an index, you can store as many documents as you want.
 
+<br>
+For example: you see below for a instance JSON for _account_.
+```
+'{"name":"John", "lastname":"Doe", "job_description":"Systems administrator and Linux specialit"}'
+```
+
 ## Index
 An index is a collection of documents that have somewhat similar characteristics. For example, you can have an index for customer data, another index for a product catalog, and yet another index for order data. An index is identified by a name (that must be all lowercase) and this name is used to refer to the index when performing indexing, search, update, and delete operations against the documents in it.
 
@@ -41,7 +47,7 @@ In a single cluster, you can define as many indexes as you want.
 ## Shards & Replicas
 An index can potentially store a large amount of data that can exceed the hardware limits of a single node. For example, a single index of a billion documents taking up 1TB of disk space may not fit on the disk of a single node or may be too slow to serve search requests from a single node alone.
 <br>
-To solve this problem, Elasticsearch provides the ability to subdivide your index into multiple pieces called shards. When you create an index, you can simply define the number of shards that you want. Each shard is in itself a fully-functional and independent "index" that can be hosted on any node in the cluster.
+To solve this problem, Elasticsearch provides the ability to subdivide your index into multiple pieces called **shards**. When you create an index, you can simply define the number of shards that you want. Each shard is in itself a fully-functional and independent "index" that can be hosted on any node in the cluster.
 
 ### Shards
 * It allows you to horizontally split/scale your content volume
