@@ -221,6 +221,13 @@ curl -d '{"name":"John", "lastname":"Doe", "job_description":"Systems administra
 
 ![Index Document Create](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/elasticsearch/index-document-operation.jpg)
 
+## Delete the index
+
+```sh
+curl -X DELETE "localhost:9200/customer?pretty"
+curl -X GET "localhost:9200/_cat/indices?v"
+```
+
 
 # Reference Link
 https://www.elastic.co/blog/a-practical-introduction-to-elasticsearch
