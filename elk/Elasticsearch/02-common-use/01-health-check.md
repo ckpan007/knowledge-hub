@@ -16,6 +16,9 @@ From above you will get the health status for your cluster. **The default cluste
 
 Notice: If the status is red, ES still afford search functions but you need to fix the issue ASAP.
 
+![Red Yellow](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/elasticsearch/red-yellow.jpg)
+
+
 # Health check for all the nodes
 
 ```sh

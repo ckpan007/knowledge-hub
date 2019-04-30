@@ -7,3 +7,4 @@ For more detail see official page: https://www.elastic.co/guide/en/elasticsearch
 Automatic index creation can be disabled by setting **action.auto_create_index** to false in the config file of all nodes. Automatic mapping creation can be disabled by setting index.mapper.dynamic to false per-index as an index setting.
 <br>
 Automatic index creation can include a pattern based white/black list, for example, set **action.auto_create_index** to +aaa*,-bbb*,+ccc*,-* (+ meaning allowed, and - meaning disallowed).
+
