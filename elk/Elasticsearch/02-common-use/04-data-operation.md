@@ -23,3 +23,8 @@ The console will print below logs:
 
 
 
+# Update, Delete, Batch Processing
+
+* Update action: https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-update-documents.html
+* Delete action: https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-delete-documents.html
+* Batch Processing: https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-batch-processing.html
