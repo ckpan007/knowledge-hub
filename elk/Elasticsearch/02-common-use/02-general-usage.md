@@ -191,6 +191,7 @@ Please refer to https://www.elastic.co/guide/en/elasticsearch/reference/5.5/quer
 
 
 # Full Coding
+
 ## Touch a new file named data.json
 
 ```
@@ -205,6 +206,8 @@ Please refer to https://www.elastic.co/guide/en/elasticsearch/reference/5.5/quer
 ```
 ## Create a new Index named accounts
 ```sh
+https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-create-index.html
+
 curl -X PUT localhost:9200/customer?pretty
 curl -X GET "localhost:9200/_cat/indices?v"
 
