@@ -3,7 +3,7 @@
 * OneTab
 * SwitchyOmega - Switch proxy
 * Just Read - Right-click the page and you will use it
-* Steward Plus - Automatically change the background iamge
+* Steward Plus - Automatically change the background image
 * PinBox
 * Holmes - Important! Search tag
 * Session Buddy - a command launcher with extension management/app launcher/tab management/history search/alfred
