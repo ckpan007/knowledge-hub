@@ -240,7 +240,7 @@ tail -f <log file name>
 
 ```
 
-## View log in Real time
+## View log in Real time - 实时查看文件
 ```sh
 tail -f <your log file>
 tailf <your log file>

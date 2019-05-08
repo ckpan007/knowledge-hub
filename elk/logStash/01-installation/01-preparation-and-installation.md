@@ -54,7 +54,7 @@ cd logstash
 
 * The -e flag enables you to specify a configuration directly from the command line
 * The pipeline in the example takes input from the standard input, stdin
-* moves that input to the standard output, stdout, in a structured format
+* Moves that input to the standard output, stdout, in a structured format
 * Logstash adds timestamp and IP address information to the message.
 
 # Exit from Logstash
