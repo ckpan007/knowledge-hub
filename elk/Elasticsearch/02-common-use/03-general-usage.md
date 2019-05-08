@@ -27,12 +27,13 @@ The data store in ES is called as _Document_. Documents in Elasticsearch are rep
 
 # Add Documenet
 ```
-POST localhost:9200/accounts/person/1 
+curl -X POST "localhost:9200/accounts/person/1"  -H 'Content-Type: application/json' -d'
 {
     "name" : "John",
     "lastname" : "Doe",
     "job_description" : "Systems administrator and Linux specialit"
 }
+'
 ```
 
 The response will return information about the document creation:
@@ -52,13 +53,17 @@ The response will return information about the document creation:
     "created": true
 }
 ```
-# Get Document
 
+
+# Get Document
 Now that the document exists, we can retrieve it:
+
 ```
-GET localhost:9200/accounts/person/1 
+curl -X GET "localhost:9200/accounts/person/1" 
 ```
+
 The result will contain metadata and also the full document (shown in the _source field) :
+
 ```
 {
     "_index": "accounts",
@@ -76,21 +81,24 @@ The result will contain metadata and also the full document (shown in the _sourc
 
 # Update Document
 ```
-POST localhost:9200/accounts/person/1/_update
+curl -X POST "localhost:9200/accounts/person/1/_update" -H 'Content-Type: application/json' -d'
 {
       "doc":{
           "job_description" : "Systems administrator and Linux specialist"
        }
 }
+'
 ```
 
 # Search
 Search format looks like: **/_search?q=something**
 
 ```
-GET localhost:9200/_search?q=john
+curl -X GET "localhost:9200/_search?q=john"
 ```
+
 The response:
+
 ```
 {
     "took": 58,
@@ -137,9 +145,11 @@ For search functions you need to afford some search criterias in order to let ES
 # Delete Documenet
 You added the document and now you want to delete document, you need to input the _path_ you defined that you added the document.
 ```
-DELETE localhost:9200/accounts/person/1
+curl -X DELETE "localhost:9200/accounts/person/1"
 ```
+
 The response will looks like below:
+
 ```
 {
     "found": true,
