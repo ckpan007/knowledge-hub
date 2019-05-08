@@ -24,10 +24,13 @@ echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee 
 
 ```
 
-## apt-get update
+## apt-get update and install
 ```sh
 sudo apt-get update && sudo apt-get install logstash
 ```
+
+![APT Installation](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/logstash/apt-installation.jpg)
+
 
 
 # Intallation in RHEL - YUM
