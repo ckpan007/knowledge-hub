@@ -67,7 +67,7 @@ https://dwz.cn/eSqMQeGs
 
 https://dwz.cn/JnroLx4i
 
-![Git History](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/tools/tools/git-history.jpg)
+![Git History](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/tools/git-history.jpg)
 ![Git History 2](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/tools/git-history-2.jpg)
 ![Git History 3](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/tools/git-history-3.jpg)
 

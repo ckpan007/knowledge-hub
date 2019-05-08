@@ -9,3 +9,5 @@
 * Terminal
 * babun
 
+# Markdown to PDF
+https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf
