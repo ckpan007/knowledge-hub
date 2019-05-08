@@ -31,6 +31,9 @@ sudo apt-get update && sudo apt-get install logstash
 
 ![APT Installation](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/logstash/apt-installation.jpg)
 
+The directory of Logstash is _/usr/share/logstash/_
+
+![Directory of Logstash](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/logstash/directory-logstash.jpg)
 
 
 # Intallation in RHEL - YUM
@@ -39,3 +42,18 @@ Refer to [Here](https://www.elastic.co/guide/en/logstash/6.2/installing-logstash
 
 # Docker running Logstash
 Refer to [Here](https://www.elastic.co/guide/en/logstash/6.2/docker.html).
+
+
+# Test Logstash installation
+```sh
+cd logstash
+./bin/logstash -e 'input { stdin { } } output { stdout {} }'
+```
+
+![Logstash Running](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/logstash/logstash-running.jpg)
+
+
+
+
+# Reference Link
+https://www.elastic.co/guide/en/logstash/6.2/installing-logstash.html
