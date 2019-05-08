@@ -52,6 +52,14 @@ cd logstash
 
 ![Logstash Running](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/logstash/logstash-running.jpg)
 
+* The -e flag enables you to specify a configuration directly from the command line
+* The pipeline in the example takes input from the standard input, stdin
+* moves that input to the standard output, stdout, in a structured format
+* Logstash adds timestamp and IP address information to the message.
+
+# Exit from Logstash
+You need to type **CTRL-D** in the shell where Logstash is running.
+
 
 
 
