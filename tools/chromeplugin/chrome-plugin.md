@@ -89,7 +89,7 @@ https://dwz.cn/yP2VWDRK
 # Chromoji - google表情包
 ![Chromoji](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/tools/chromoji.jpg)
 
-# 缓存清理
+# 缓存清理 - 强烈推荐
 ## Clear Cache
 
 ![Clear Cache](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/tools/clear-cache.jpg)
