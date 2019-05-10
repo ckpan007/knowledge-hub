@@ -16,3 +16,7 @@ https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf
 # DB
 * DBeaver - https://blog.51cto.com/12042068/2115077
 * Navicat - https://www.navicat.com/en/
+
+
+# Linux
+Mobaxitem
