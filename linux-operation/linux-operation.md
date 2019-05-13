@@ -172,6 +172,11 @@ top -p 1309, 1882
 ```
 
 
+# Files Transfer
+
+## SCP
+http://www.hypexr.org/linux_scp_help.php
+
 
 
 
