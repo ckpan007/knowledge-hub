@@ -1,4 +1,11 @@
+# Installation - Unbuntu Deb
+```sh
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.0.1-amd64.deb
+sudo dpkg -i filebeat-7.0.1-amd64.deb
 
+```
+
+![Installation](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/filebeat/installation.jpg)
 
 
 
