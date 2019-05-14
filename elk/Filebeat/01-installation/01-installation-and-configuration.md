@@ -45,6 +45,25 @@ This fetches all .log files from the subfolders of /var/log. It does not fetch l
 <br>
 **Notice**: Currently it is not possible to recursively fetch all files in all subdirectories of a directory.
 
+## Configure the output
+You need to define the output of the logs. For all the availbale choice you can use as the output:
+See [Output](https://www.elastic.co/guide/en/beats/filebeat/current/configuring-output.html).
+
+* [Output for Elasticsearch](https://www.elastic.co/guide/en/beats/filebeat/current/elasticsearch-output.html)
+* [Output for Logstash](https://www.elastic.co/guide/en/beats/filebeat/current/logstash-output.html)
+* [Output for kafka](https://www.elastic.co/guide/en/beats/filebeat/current/kafka-output.html)
+* [Output for Redis](https://www.elastic.co/guide/en/beats/filebeat/current/redis-output.html)
+* [Output for Fuke](https://www.elastic.co/guide/en/beats/filebeat/current/file-output.html)
+
+
+
+
+For much more detail related with [Configuration of Filebeat](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-configuration.html#filebeat-configuration).
+
+And also [Configuring filebeat](https://www.elastic.co/guide/en/beats/filebeat/current/configuring-howto-filebeat.html) for the summary of configuring filebeat.
+
+
+
 
 # Reference Link
 https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-getting-started.html
