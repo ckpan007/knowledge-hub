@@ -1,3 +1,8 @@
+# Official Guide
+https://code.visualstudio.com/Docs/editor/codebasics#_command-palette
+
+
+
 # Encoding Plugin
 *  EditorConfig for Visual Studio Code
 
