@@ -7,6 +7,10 @@ https://kb.vmware.com/s/article/2146361
 <br>
 https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage
 
+如果是台式机，那么还是需要到BIOS面板中更改enable虚拟化选项即可。<br>
+必须确保HYPER-V在(启动或者关闭WINDOWS功能)是关闭着的，即未选中状态.
+更改完成之后，不管是VirutalBox还是VMWare Player都可以安装64-bit虚拟机。
+
 
 ## Worked solution to close Device/Credential Guard
 
