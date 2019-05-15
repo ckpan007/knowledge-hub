@@ -39,11 +39,11 @@ You can overide below configuration:
 
 ![ETC Default Grafana](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/etc-default-grafana.jpg)
 
-## Logging 
-By default Grafana will log to /var/log/grafana.
 
-## Database
-The default configuration specifies a sqlite3 database located at **/var/lib/grafana/grafana.db**. **Please backup this database before upgrades**. You can also use MySQL or Postgres as the Grafana database, as detailed on the configuration page.
+| Name | Path | Description |
+|:---| :--- | :--- |
+| Logging Directory | /var/log/grafana | By default the path is the value, but you can change it via configuration. |
+| Database | /var/lib/grafana/grafana.db | The default configuration specifies a sqlite3 database located at the value,**Please backup this database before upgrades**. You can also use MySQL or Postgres as the Grafana database, as detailed on the configuration page. |
 
 
 # Start the server (init.d service)
@@ -78,7 +78,8 @@ The configuration file is located at **/etc/grafana/grafana.ini**. For more deta
 
 ![Grafana Configuration](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/grafana-configuration.jpg)
 
-
+# Logging in Grafana
+To run Grafana open your browser and go to http://localhost:3000/. 3000 is the default http port that Grafana listens to if you haven’t configured a different port. Then follow the instructions here.
 
 
 # Reference Links
