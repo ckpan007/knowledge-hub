@@ -4,13 +4,28 @@
 
 echo "List all the software you can operate..."
 
-========================== Software Installation =================================
+========================== System Tools Installation =================================
+echo "1 --- openssh-server"
+echo "2 --- Sysstat"
+echo "3 --- sar"
+echo "4 --- speedometer"
+echo "5 --- nethogs"
+echo "6 --- vnstat"
+echo "7 --- ifstat"
+echo "8 --- dstat"
+echo "9 --- iftop"
+echo "10 --- iptraf"
+echo "11 --- tcptrack"
+echo "12 --- pktstat"
+
+========================== Development Software Installation =================================
 echo "1 --- java"
-echo "2 --- docker CE"
-echo "1 --- java"
-echo "1 --- java"
-echo "1 --- java"
-echo "1 --- java"
-echo "1 --- java"
-echo "1 --- java"
-echo "1 --- java"
+echo "2 --- maven"
+echo "3 --- docker CE"
+echo "4 --- kubernetes"
+
+
+
+
+
+

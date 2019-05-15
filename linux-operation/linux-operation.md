@@ -23,7 +23,7 @@ uname -a
 uname -mrs
 
 #check is 32bit or 64bit
-uanme -i
+uname -i
 
 cat /proc/version
 ```
