@@ -2,9 +2,10 @@
 
 # This is the shell to install expected softwares on Ubuntu for java developer
 
-echo "List all the software you can operate..."
+echo "List all the softwares you can operate..."
 
-========================== System Tools Installation =================================
+echo ========================== System Tools Installation =================================
+
 echo "1 --- openssh-server"
 echo "2 --- Sysstat"
 echo "3 --- sar"
@@ -18,7 +19,7 @@ echo "10 --- iptraf"
 echo "11 --- tcptrack"
 echo "12 --- pktstat"
 
-========================== Development Software Installation =================================
+echo ========================== Development Software Installation =================================
 echo "1 --- vim"
 echo "2 --- java"
 echo "3 --- maven"
