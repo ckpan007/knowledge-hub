@@ -81,6 +81,10 @@ The configuration file is located at **/etc/grafana/grafana.ini**. For more deta
 # Logging in Grafana
 To run Grafana open your browser and go to http://localhost:3000/. 3000 is the default http port that Grafana listens to if you haven’t configured a different port. Then follow the instructions here.
 
+```sh
+curl -X GET "http://localhost:3000"
+```
+
 
 # Reference Links
 https://grafana.com/docs/installation/
