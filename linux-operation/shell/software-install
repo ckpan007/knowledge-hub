@@ -4,7 +4,7 @@
 
 echo "List all the softwares you can operate..."
 
-echo ========================== System Tools Installation =================================
+echo =========================== System Tools Installation =======================================
 
 echo "1 --- openssh-server"
 echo "2 --- Sysstat"
@@ -20,11 +20,106 @@ echo "11 --- tcptrack"
 echo "12 --- pktstat"
 
 echo ========================== Development Software Installation =================================
-echo "1 --- vim"
-echo "2 --- java"
-echo "3 --- maven"
-echo "4 --- docker CE"
-echo "5 --- kubernetes"
+echo "13 --- vim"
+echo "14 --- java"
+echo "15 --- maven"
+echo "16 --- docker CE"
+echo "17 --- kubernetes"
+
+read opnumber
+
+echo "The option number you input is:::::" $opnumber
+
+if [ "$opnumber" = "1" ]; then
+  echo "You will install openssh-server"
+  echo "Start to install openssh-server..."
+fi
+
+if [ "$opnumber" = "2" ]; then
+  echo "You will install Sysstat"
+  echo "Start to install Sysstat..."
+fi
+
+if [ "$opnumber" = "3" ]; then
+  echo "You will install sar"
+  echo "Start to install sar..."
+fi
+
+if [ "$opnumber" = "4" ]; then
+  echo "You will install speedometer"
+  echo "Start to install speedometer..."
+fi
+
+if [ "$opnumber" = "5" ]; then
+  echo "You will install nethogs"
+  echo "Start to install nethogs..."
+fi
+
+if [ "$opnumber" = "6" ]; then
+  echo "You will install vnstat"
+  echo "Start to install vnstat..."
+fi
+
+if [ "$opnumber" = "7" ]; then
+  echo "You will install ifstat"
+  echo "Start to install ifstat..."
+fi
+
+if [ "$opnumber" = "8" ]; then
+  echo "You will install dstat"
+  echo "Start to install dstat..."
+fi
+
+if [ "$opnumber" = "9" ]; then
+  echo "You will install iftop"
+  echo "Start to install iftop..."
+fi
+
+if [ "$opnumber" = "10" ]; then
+  echo "You will install iptraf"
+  echo "Start to install iptraf..."
+fi
+
+if [ "$opnumber" = "11" ]; then
+  echo "You will install tcptrack"
+  echo "Start to install tcptrack..."
+fi
+
+if [ "$opnumber" = "12" ]; then
+  echo "You will install pktstat"
+  echo "Start to install pktstat..."
+fi
+
+if [ "$opnumber" = "13" ]; then
+  echo "You will install vim"
+  echo "Start to install vim..."
+fi
+
+if [ "$opnumber" = "14" ]; then
+  echo "You will install java"
+  echo "Start to install java..."
+fi
+
+if [ "$opnumber" = "15" ]; then
+  echo "You will install maven"
+  echo "Start to install maven..."
+fi
+
+if [ "$opnumber" = "16" ]; then
+  echo "You will install docker CE"
+  echo "Start to install docker CE..."
+fi
+
+if [ "$opnumber" = "17" ]; then
+  echo "You choose to install kubernetes"
+  echo "Start to install kubernetes..."
+
+
+fi
+
+
+
+
 
 
 
