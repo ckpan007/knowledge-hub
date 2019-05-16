@@ -21,6 +21,35 @@ The console will print below logs:
 
 ![Create Index](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/elasticsearch/create-index.jpg)
 
+```
+http://localhost:9200/customer
+```
+
+
+You can get some results from the web page:
+
+![Document for customer](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/elasticsearch/document.jpg)
+
+## Update the document and add new field
+
+```sh
+curl -X POST "localhost:9200/customer/_update/2?pretty" -H 'Content-Type: application/json' -d'
+{
+  "doc": { "name": "Jane Doe", "age": 20 }
+}
+'
+```
+
+## Update the document and change field value
+
+```sh
+curl -X POST "localhost:9200/customer/_update/2?pretty" -H 'Content-Type: application/json' -d'
+{
+  "doc": { "name": "Jane Doe" }
+}
+'
+
+```
 
 
 # Update, Delete, Batch Processing

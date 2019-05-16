@@ -37,8 +37,11 @@ You should choose **Elasticsearch**:
 | Auth | For detail just check on the page |
 | Elasticsearch details | For detail just check on the page |
 
+### Server access mode (Default)
+Check official [Server access mode](https://grafana.com/docs/features/datasources/elasticsearch/#server-access-mode-default).
 
-
+### Browser (Direct) access
+Check official [Browser (Direct) access](https://grafana.com/docs/features/datasources/elasticsearch/#browser-direct-access).
 
 
 

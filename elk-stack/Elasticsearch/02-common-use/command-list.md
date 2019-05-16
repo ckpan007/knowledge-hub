@@ -92,6 +92,9 @@ curl -d '{"name":"Joke", "lastname":"Kitty", "job_description":"Software enginee
 
 ```
 
+## Update Document
+
+
 ## Get Document with specific ID
 Below try to get the document with id value as 1
 
