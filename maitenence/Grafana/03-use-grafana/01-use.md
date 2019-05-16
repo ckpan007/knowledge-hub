@@ -27,15 +27,12 @@ You should choose **Elasticsearch**:
 
 ![Source Elasticsearch](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/source-elasticsearch.jpg)
 
-* Name -
-* Default -
-
 | Name | Description |
 |:---| :--- |
 | Name | The data source name you define |
 | Default | Default data source means that it will be pre-selected for new panels. |
 | URL | Specify a complete HTTP URL (for example http://your_server:8080). Your access method is Server, this means the URL needs to be accessible from the grafana backend/server.  |
-| Access | Access mode controls how requests to the data source will be handled. Server should be the preferred way if nothing else stated.  |
+| Access | Access mode controls how requests to the data source will be handled. Server should be the preferred way if nothing else stated.**Server (default)** = URL needs to be accessible from the Grafana backend/server, **Browser** = URL needs to be accessible from the browser. |
 | Whitelisted Cookies | Grafana Proxy deletes forwarded cookies by default. Specify cookies by name that should be forwarded to the data source.  |
 | Auth | For detail just check on the page |
 | Elasticsearch details | For detail just check on the page |
