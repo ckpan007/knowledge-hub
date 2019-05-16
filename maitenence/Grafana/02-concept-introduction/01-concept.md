@@ -30,6 +30,10 @@ You can think Data Source as the **storage backends** for the time series data. 
 * A user can belong to one or more Organizations
 * A user can be assigned different levels of privileges through roles
 
+You can check current login user by looking at the left bottom corner of the page.
+
+![User](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/user.jpg)
+
 For more detail related with [User Auth](https://grafana.com/docs/reference/http_api/#users).
 
 # Dashboard
