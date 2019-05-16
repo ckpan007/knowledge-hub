@@ -34,17 +34,11 @@ For more detail related with [User Auth](https://grafana.com/docs/reference/http
 
 # Dashboard
 Dashboard is a whole page where you put all your panels or rows together. Dashboards can be thought of as of a set of one or more Panels organized and arranged into one or more Rows.
-<br>
+
 * If you want to control the time period to display sepeficial data during that time period you can use [Dashboard time picker](https://grafana.com/docs/reference/timerange/) in the upper right of the Dashboard.
-
-<br>
 * Dashboards can utilize [Templating](https://grafana.com/docs/reference/templating/) to make them more dynamic and interactive.
-<br>
 * You can share Dashboard by following [Share Dashboard](https://grafana.com/docs/reference/sharing/).
-<br>
 * You can encode all the data currently being viewed into a static and interactive JSON documen by [ Snapshot ](https://grafana.com/docs/reference/sharing/#snapshots).
-
-<br>
 * Dashboards can be tagged, and the Dashboard picker provides quick, searchable access to all Dashboards in a particular Organization.
 
 
