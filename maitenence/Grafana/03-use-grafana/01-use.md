@@ -84,8 +84,8 @@ You can add queries to decide send request by which Elasticsearch index field. Y
 ![Queries](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/queries.jpg)
 
 From above we realize that:
-* Currently we are using Elasticsearch datasource. After you added new datasource, you can use it here
-* For Metric - I shall explain laer
+* Currently we are using Elasticsearch datasource. After you added new datasource, you can see Elasticsearch showes itself here
+* Metric - I shall explain later
 * Group By - You can add new **Group By** items by clicking left **+ -** button
 * Terms - You can select other types of this _Group By_, I shall explain later
 * Currently I used **age** field which is the field of my Elasticsearch index. You can change the field you want to do the group by
