@@ -43,6 +43,22 @@ Check official [Server access mode](https://grafana.com/docs/features/datasource
 ### Browser (Direct) access
 Check official [Browser (Direct) access](https://grafana.com/docs/features/datasources/elasticsearch/#browser-direct-access).
 
+### Configure new DataSource
+
+From above we know that, if you want to configure Elasticsearch as the data source, you need to do some configuration: such as added new field named _timestamp_ in your Elasticsearch index.<br>
+
+![Add New Data Source with field](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/add-new-data-source-2.jpg)
+
+* Now you have your elasticsearch server running at "http://localhost:9200/"
+* You have index with name customer
+* You have a field named as timestamp
+* After clicking **Save&Test** you get message that validation is okay, index ok.
+
+Now you are ready for your elasticsearch data source. You can proceed with the next step.
+
+
+
+
 
 
 
@@ -68,7 +84,7 @@ You can add any account of panels as you wish within the dashboard.
 
 ### Queries
 
-![Queries](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/quries.jpg)
+![Queries](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/queries.jpg)
 
 ### General
 
