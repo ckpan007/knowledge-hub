@@ -49,26 +49,50 @@ From above we know that, if you want to configure Elasticsearch as the data sour
 
 ![Add New Data Source with field](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/add-new-data-source-2.jpg)
 
-* Now you have your elasticsearch server running at "http://localhost:9200/"
+* Now you have your Elasticsearch server running at "http://localhost:9200/"
 * You have index with name customer
 * You have a field named as timestamp
+* Pay attention to the version of the Elasticsearch
 * After clicking **Save&Test** you get message that validation is okay, index ok.
 
 Now you are ready for your elasticsearch data source. You can proceed with the next step.
 
+### Timestamp field
+In above you have a field named as **timestamp** in your index, and you set this field as frequency you configure Grafana to send request to Elasticsearch to check the data or do something else.
+* Min time interval - A lower limit for the auto group by time interval, more detail see [Min time interval](https://grafana.com/docs/features/datasources/elasticsearch/#min-time-interval)
 
-
-
-
+**Notice that**: The field **timestamp** is the necessary field.
 
 
 # Create new Dashboard to use the data source
+
+Let click the **Home** button to go back to the home page. And now it is the time to create new dashboard.
 
 ## Create new Dashboard
 
 ![New Dashboard](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/new-dashboard.jpg)
 
-### Visualization
+## Change General Information
+![General](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/general.jpg)
+
+## Queries
+Query is the most important part if you want to configure Grafana. Within this board you configure Query to decide **the panel diagram chart**.
+<br>
+You can add queries to decide send request by which Elasticsearch index field. You can add some **grouby** attributes and so on.
+
+
+![Queries](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/queries.jpg)
+
+From above we realize that:
+* Currently we are using Elasticsearch datasource. After you added new datasource, you can use it here
+* For Metric - I shall explain laer
+* Group By - You can add new **Group By** items by clicking left **+ -** button
+* Terms - You can select other types of this _Group By_, I shall explain later
+* Currently I used **age** field which is the field of my Elasticsearch index. You can change the field you want to do the group by
+
+
+## Visualization
+
 Click **Choose Visualization** to create _Graph, Table, Text and other types of panel.
 
 ![Choose Visualization](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/choose-visualization.jpg)
@@ -82,13 +106,7 @@ You can also do some other changes there, such as _Axes, Draw Modes, Legend, Thr
 <br>
 You can add any account of panels as you wish within the dashboard.
 
-### Queries
 
-![Queries](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/queries.jpg)
-
-### General
-
-![General](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/grafana/general.jpg)
 
 In this panel you can edit some general information about Grafana such as _panel title, description_ and so on.
 
