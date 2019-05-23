@@ -26,6 +26,11 @@ uname -mrs
 uname -i
 
 cat /proc/version
+
+lsb_release
+lsb_release -a
+
+id
 ```
 ## User management
 
@@ -269,7 +274,7 @@ multitail /var/log/apache2/access.log /var/log/apache2/error.log
 
 ```
 
-### Using lnav Command 
+### Using lnav Command
 ```sh
 # Lnav utility can also watch and follow multiple files and display their content in real time.
 
@@ -283,7 +288,7 @@ $ sudo lnav /var/log/apache2/access.log /var/log/apache2/error.log
 
 
 
-# Check VT-x or AMD-v virtualization 
+# Check VT-x or AMD-v virtualization
 ```sh
 egrep --color 'vmx|svm' /proc/cpuinfo
 
