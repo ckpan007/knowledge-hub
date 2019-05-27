@@ -12,3 +12,34 @@ Automatic index creation can be disabled by setting **action.auto_create_index**
 <br>
 Automatic index creation can include a pattern based white/black list, for example, set **action.auto_create_index** to +aaa*,-bbb*,+ccc*,-* (+ meaning allowed, and - meaning disallowed).
 
+# What is index fields
+Index fields are also thougth as index mapping or index mapping.
+
+```
+curl -X PUT "localhost:9200/my_index" -H 'Content-Type: application/json' -d'
+{
+  "mappings": {
+    "properties": {
+      "title":    { "type": "text"  },
+      "name":     { "type": "text"  },
+      "age":      { "type": "integer" },
+      "created":  {
+        "type":   "date",
+        "format": "strict_date_optional_time||epoch_millis"
+      }
+    }
+  }
+}
+'
+
+```
+
+* Create an index called my_index.
+* Specify the fields or properties in the mapping.
+* Specify that the title field contains text values.
+* Specify that the name field contains text values.
+* Specify that the age field contains integer values.
+* Specify that the created field contains date values in two possible formats.
+
+Detail see [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html).
+

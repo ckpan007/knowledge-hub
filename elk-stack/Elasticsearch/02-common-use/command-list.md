@@ -103,3 +103,7 @@ curl -X GET localhost:9200/accounts/person/2
 ```
 
 
+
+# Index
+
+## Get Field Mapping
