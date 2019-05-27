@@ -107,3 +107,9 @@ curl -X GET localhost:9200/accounts/person/2
 # Index
 
 ## Get Field Mapping
+
+```sh
+curl -X GET "localhost:9200/<your index name>/_mapping"
+```
+
+
