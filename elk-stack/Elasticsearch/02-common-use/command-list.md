@@ -31,7 +31,66 @@ yellow open   customer OLdrwRZmS8KB2mvxRgfTOw   1   1          1            0   
 ```
 You can get the index name.
 
-## Search all the document
+# Index operation
+
+## Create new index with field mapping definition
+```sh
+curl -X PUT "localhost:9200/accounts" -H 'Content-Type: application/json' -d'
+{
+    "settings" : {
+        "number_of_shards" : 1
+    },
+    "mappings" : {
+        "properties" : {
+            "name" : { "type" : "text" },
+            "age" : { "type" : "text" },
+            "timestamp" : { "type" : "date" },
+            "address" : { "type" : "text" },
+            "job position" : { "type" : "text" }
+        }
+    }
+}
+'
+```
+
+Below create a new index named as "accounts".
+
+
+## Create new document of the index
+```sh
+curl -X PUT "localhost:9200/accounts/_doc/1" -H 'Content-Type: application/json' -d'
+{
+    "name" : 1,
+    "age" : 20,
+	"timestamp":"2019-05-27",
+	"address": "address1",
+	"job-position": "police"
+}
+'
+```
+
+Pay attention to below:
+* The index should exists
+* The id of the document should be defined
+* The data format should be correct
+* The field value should be accord with the field type you defined when creating index
+
+## Update the document of the index
+```sh
+curl -X POST "localhost:9200/accounts/_update/1?pretty" -H 'Content-Type: application/json' -d'
+{
+  "doc": { "name": "Dog", "age": 20, "timestamp":"2019-05-27", "address": "address1", "job-position": "police" }
+}
+'
+```
+
+Pay attention to below:
+* The id you want to update should be set during the url
+* The data format should be correct
+* The field value should be accord with the field type you defined when creating index
+
+
+## Search all the documents of the index
 
 ```sh
 curl -X GET "localhost:9200/accounts/_search?q=*"
@@ -70,6 +129,12 @@ curl -X GET 'localhost:9200/accounts/_search' -H 'Content-Type: application/json
         "match" : {"name":"John"}
     }
 }'
+```
+
+
+## Update the document of the index
+```sh
+
 ```
 
 ## Query DSL
