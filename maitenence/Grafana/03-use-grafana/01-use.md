@@ -1,7 +1,7 @@
 
 # Before you start
 
-Before you start you should really complete [Prometheus](https://github.com/HuangMarco/knowledge-hub/tree/dev/prometheus/01-introduction/01-introduction.md) first.
+Before you start you should really complete [Prometheus](https://github.com/HuangMarco/knowledge-hub/tree/dev/prometheus/01-introduction/01-introduction.md) first **if you use Prometheus as the data source**.
 
 # Start
 At the very beginning, when you open the home page of the Grafana web page. You will see a flow chart picture displayed on the page.
