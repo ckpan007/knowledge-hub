@@ -43,8 +43,9 @@ curl -X PUT "localhost:9200/accounts" -H 'Content-Type: application/json' -d'
     "mappings" : {
         "properties" : {
             "name" : { "type" : "text" },
-            "age" : { "type" : "text" },
-            "timestamp" : { "type" : "date" },
+            "user-id" : { "type" : "keyword" },
+            "age" : { "type" : "long" },
+            "@timestamp" : { "type" : "date" },
             "address" : { "type" : "text" },
             "job position" : { "type" : "text" }
         }
@@ -60,13 +61,27 @@ Below create a new index named as "accounts".
 ```sh
 curl -X PUT "localhost:9200/accounts/_doc/1" -H 'Content-Type: application/json' -d'
 {
-    "name" : 1,
+    "name" : "name1",
+	"user-id":1,
     "age" : 20,
 	"timestamp":"2019-05-27",
 	"address": "address1",
 	"job-position": "police"
 }
 '
+
+
+curl -X PUT "localhost:9200/accounts/_doc/2" -H 'Content-Type: application/json' -d'
+{
+    "name" : "name2",
+	"user-id":3,
+    "age" : 20,
+	"timestamp":"2019-05-27",
+	"address": "address1",
+	"job-position": "police"
+}
+'
+
 ```
 
 Pay attention to below:
@@ -74,6 +89,13 @@ Pay attention to below:
 * The id of the document should be defined
 * The data format should be correct
 * The field value should be accord with the field type you defined when creating index
+
+
+## Delete the index
+```sh
+curl -X DELETE "localhost:9200/accounts"
+```
+
 
 ## Update the document of the index
 ```sh
