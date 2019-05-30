@@ -47,7 +47,7 @@ curl -X PUT "localhost:9200/accounts" -H 'Content-Type: application/json' -d'
             "age" : { "type" : "long" },
             "@timestamp" : { "type" : "date" },
             "address" : { "type" : "text" },
-            "job position" : { "type" : "text" }
+            "job-position" : { "type" : "text" }
         }
     }
 }
@@ -64,7 +64,7 @@ curl -X PUT "localhost:9200/accounts/_doc/1" -H 'Content-Type: application/json'
     "name" : "name1",
 	"user-id":1,
     "age" : 20,
-	"timestamp":"2019-05-27",
+	"@timestamp":"2019-05-27",
 	"address": "address1",
 	"job-position": "police"
 }
@@ -74,10 +74,21 @@ curl -X PUT "localhost:9200/accounts/_doc/1" -H 'Content-Type: application/json'
 curl -X PUT "localhost:9200/accounts/_doc/2" -H 'Content-Type: application/json' -d'
 {
     "name" : "name2",
+	"user-id":2,
+    "age" : 20,
+	"@timestamp":"2019-05-27",
+	"address": "address1",
+	"job-position": "police"
+}
+'
+
+curl -X PUT "localhost:9200/accounts/_doc/3" -H 'Content-Type: application/json' -d'
+{
+    "name" : "name3",
 	"user-id":3,
     "age" : 20,
-	"timestamp":"2019-05-27",
-	"address": "address1",
+	"@timestamp":"2019-05-27",
+	"address": "address3",
 	"job-position": "police"
 }
 '
