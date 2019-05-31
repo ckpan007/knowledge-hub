@@ -8,12 +8,12 @@ The index operation automatically creates an index if it has not been created be
 For more detail see official page: https://www.elastic.co/guide/en/elasticsearch/reference/5.5/docs-index_.html#index-creation
 
 <br>
-Automatic index creation can be disabled by setting **action.auto_create_index** to false in the config file of all nodes. Automatic mapping creation can be disabled by setting index.mapper.dynamic to false per-index as an index setting.
+Automatic index creation can be disabled by setting "action.auto_create_index" to false in the config file of all nodes. Automatic mapping creation can be disabled by setting index.mapper.dynamic to false per-index as an index setting.
 <br>
 Automatic index creation can include a pattern based white/black list, for example, set **action.auto_create_index** to +aaa*,-bbb*,+ccc*,-* (+ meaning allowed, and - meaning disallowed).
 
 # What is index fields
-Index fields are also thougth as index mapping or index mapping.
+Index fields are also thought as index mapping.
 
 ```
 curl -X PUT "localhost:9200/my_index" -H 'Content-Type: application/json' -d'

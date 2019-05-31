@@ -59,7 +59,7 @@ The response will return information about the document creation:
 Now that the document exists, we can retrieve it:
 
 ```
-curl -X GET "localhost:9200/accounts/person/1" 
+curl -X GET "localhost:9200/accounts/person/1"
 ```
 
 The result will contain metadata and also the full document (shown in the _source field) :
@@ -164,12 +164,6 @@ The response will looks like below:
         "failed": 0
     }
 }
-```
-
-# Delete full index
-```
-DELETE localhost:9200/accounts
-
 ```
 
 # Index API
