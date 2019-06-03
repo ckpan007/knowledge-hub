@@ -30,11 +30,12 @@ Now you should select the field you want to do the filtering. Here I used _age_ 
 * youtube - https://www.youtube.com/watch?v=mgcJPREl3CU
 * https://www.youtube.com/watch?v=d6KicssNzxM
 * https://www.youtube.com/watch?v=hEztaMtobXw - 就看这个
-* git lab:https://docs.gitlab.com/ee/administration/monitoring/performance/grafana_configuration.html
+* git lab guide for InflexDB:https://docs.gitlab.com/ee/administration/monitoring/performance/grafana_configuration.html
 * Grafana Blogs: https://grafana.com/blog/2016/03/09/how-to-effectively-use-the-elasticsearch-data-source-in-grafana-and-solutions-to-common-pitfalls/
 * Aggregation - https://www.cnblogs.com/ghj1976/p/5311183.html
 * Elastcisearch 权威指南 - https://es.xiaoleilu.com/010_Intro/35_Tutorial_Aggregations.html
 * Grafana使用 - http://docs.flycloud.me/docs/ELKStack/elasticsearch/other/grafana.html
 * Logstash - http://ww25.kibana.logstash.es/content/?r=&gc=pid-bodis-gtest46%2Cpid-bodis-gcontrol108&query=Logs&afdToken=3B1g_1jUOpvYh0btwvTMViS8rtlk1mkUe8MMrX-pMz_0-_jspLt8M_qBpsFs-PIiY3IJ2lrEXjKl5dgCtvVBkju1_ph6V6m4TIwhJ1OB
 * ELS Stack - http://ww25.kibana.logstash.es/content/
+
 
