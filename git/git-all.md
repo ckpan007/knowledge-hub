@@ -113,3 +113,7 @@ Github推荐：https://github.com/explore
 issue中输入冒号 : 添加表情
 任意界面，shift + ？显示快捷键
 issue中选中文字，R键快速引用
+
+
+# 如何获取git上某个用户的公钥
+https://github.com/<useraccount>.keys
