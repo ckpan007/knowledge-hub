@@ -152,3 +152,9 @@
 # Development
 * [SpotBugs](https://spotbugs.github.io/)
 * [Flyway by Boxfuse • Database Migrations Made Easy](https://flywaydb.org/).
+* jsoncode - maven jsoncode library
+* fastjson - provided by Alicloud
+* JSON Generator - generate json automatically
+
+
+

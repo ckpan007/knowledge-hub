@@ -5,3 +5,18 @@ https://www.json-generator.com/
 This online tool will generate batch of json automatically based on your configuration.
 
 ![Json Generator](https://github.com/HuangMarco/knowledge-hub/blob/dev/zResources/tools/json/json-generator.jpg)
+
+
+# jsoncode
+```
+<dependency>
+       <groupId>cn.miludeer</groupId>
+       <artifactId>jsoncode</artifactId>
+       <version>1.2.4</version>
+</dependency>
+```
+
+
+fastjson
+
+
