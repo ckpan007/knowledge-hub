@@ -33,6 +33,29 @@ You can get the index name.
 
 # Index operation
 
+## Create new index for es version 6.8
+```sh
+curl -X PUT "localhost:9200/department" -H 'Content-Type: application/json' -d'
+{
+    "settings" : {
+        "number_of_shards" : 1
+    },
+    "mappings" : {
+        "employee" : {
+            "properties" : {
+                 "title":    { "type": "string"  },
+				  "name":     { "type": "string"  },
+				  "age":      { "type": "integer" },
+				  "created":  {
+					"type":   "date"
+				  }
+            }
+        }
+    }
+}
+'
+```
+
 ## Create new index with field mapping definition
 ```sh
 curl -X PUT "localhost:9200/accounts" -H 'Content-Type: application/json' -d'

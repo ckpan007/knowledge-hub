@@ -20,6 +20,19 @@ cd elasticsearch-7.0.0/bin
 
 ```
 ## Installation on Ubuntu - apt install
+
+### Uninstall the existing elasticsearch
+
+```sh
+# Go to the directory /etc/apt/sources.list.d#
+# Just remove all the other versions that you dont want.
+
+apt remove elasticsearch
+
+# Then install the expected elasticsearch
+
+```
+
 ```sh
 # Import the ES PGP key
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
@@ -31,12 +44,13 @@ apt-get update && sudo apt-get install elasticsearch
 
 ```
 
+
 ## Installation on Ubuntu - deb
 
 You can go to [ES download page](https://www.elastic.co/downloads/past-releases) to seek for the specified release.
 ```sh
 
-wget -o log https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-amd64.deb  
+wget -o log https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-amd64.deb
 sudo dpkg -i elasticsearch-2.3.4.deb
 
 # To make sure Elasticsearch starts and stops automatically with the server, add its init script to the default runlevels.
