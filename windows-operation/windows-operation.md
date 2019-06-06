@@ -46,5 +46,9 @@ Download URL: https://www.raymond.cc/blog/download/did/3776/
 
 # Reference Links
 https://stackoverflow.com/questions/39858200/vmware-workstation-and-device-credential-guard-are-not-compatible
- 
 
+
+# 增加键盘光标移动速度
+```sh
+control keyboard
+```
