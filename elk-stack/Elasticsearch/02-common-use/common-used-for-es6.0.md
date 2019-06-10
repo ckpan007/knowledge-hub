@@ -91,3 +91,10 @@ curl -X PUT "localhost:9200/department/employee/8" -H 'Content-Type: application
 }
 '
 ```
+
+
+常见其他的：
+```sh
+curl -X GET "localhost:9200/department/employee/3"
+
+```
