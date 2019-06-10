@@ -36,7 +36,7 @@ https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
 * 创建index的时候，可添加一个date类型的字段作为时间戳标识符。该时间戳标识符的作用在于提供一个分类依据。比如在上面Grafana Panel的时候，就可以将该field作为一个data histogram来进行分组。
 * 上面的第一点是说创建Index的时候添加一个date类型的字段，而对于ES 6.0版本来说，在创建document的时候，那么就需要有一个上面date类型的字段有对应的值，即可塞到index的数据在该字段上是有值的。这样Grafana才能根据该字段显示出图表。
 
-
+可以参照样例：https://github.com/HuangMarco/knowledge-hub/blob/dev/elk-stack/Elasticsearch/02-common-use/common-used-for-es6.0.md
 
 
 
