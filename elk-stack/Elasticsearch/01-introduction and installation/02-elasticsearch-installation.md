@@ -13,10 +13,25 @@ For above it is a similar page.
 
 ## Installation on Ubuntu - tar
 ```sh
-curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz
-tar -xvf elasticsearch-7.0.0-linux-x86_64.tar.gz
-cd elasticsearch-7.0.0/bin
-./elasticsearch
+# See https://www.elastic.co/guide/en/elasticsearch/reference/6.0/_installation.html
+# Uinstall the elasticsearch in case you have an old version
+# Go to the directory /etc/apt/sources.list.d#
+# Just remove all the other versions that you dont want.
+
+# Get the version 6.0
+cd xxx/Downloads
+mkdir elasticsearch && cd elasticsearch
+curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.0.1.tar.gz
+tar -xvf elasticsearch-6.0.1.tar.gz
+mv elasticsearch-6.0.1 elasticsearch
+
+# Change the owner ship of the elasticsearch from root to elsearch
+# See for more detail: https://github.com/HuangMarco/knowledge-hub/blob/dev/elk-stack/Elasticsearch/03-configuration/01-elasticsearch-config.md#create-elsearch-user-and-group-elsearch
+sudo chown -R elsearch:elsearch  elasticsearch
+cd elasticsearch
+# Start the es
+./bin/elasticsearch
+
 
 ```
 ## Installation on Ubuntu - apt install
