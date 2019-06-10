@@ -32,6 +32,7 @@ cd elasticsearch
 # Start the es
 ./bin/elasticsearch
 
+# 解压版本的好处，省的到处去改配置文件的所有权，如果是通过apt list方式去运行，那么很麻烦的要去多个文件夹改变文件夹的所有权。
 
 ```
 ## Installation on Ubuntu - apt install

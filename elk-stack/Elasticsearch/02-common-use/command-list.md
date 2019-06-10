@@ -48,14 +48,11 @@ curl -X PUT "localhost:9200/department" -H 'Content-Type: application/json' -d'
     "mappings" : {
         "employee" : {
             "properties" : {
-                 "title":    { "type": "string"  },
-				  "name":     { "type": "string"  },
-				  "age":      { "type": "integer" },
-				  "created":  {
-					"type":   "date"
-				  }
-            }
-        }
+                "title":    { "type": "string"  },
+                "name":     { "type": "string"  },
+                "age":      { "type": "integer" },
+                "created":  { "type": "date"}   }
+          }
     }
 }
 '
