@@ -58,9 +58,36 @@ curl -X PUT "localhost:9200/department/employee/2" -H 'Content-Type: application
 	"job": "software engineer"
 }
 '
+
+
+
+curl -X PUT "localhost:9200/department/employee/8" -H 'Content-Type: application/json' -d'
+{
+    "title" : "The third person",
+	"name":"name 3",
+    "age" : 20,
+	"created":"1560032583658"
+}
+'
+
 ```
 
 上述同样是可以的。从上述的两个创建来看，主要体现在URL上的随意：/department/employee/x，只要index存在那么即可以创建成功。
 其中的x为document数据的id。
 
 而在7.0中，就不是这样了。
+
+## Date类型的值
+https://www.elastic.co/guide/en/elasticsearch/reference/current/date.html
+
+个人倾向按照UTC Milliseconds的方式来填充date类型的值,因为当我试图使用"date": "2015-01-01T12:10:30Z" 方式来设置值的时候，发现不起作用：
+```
+curl -X PUT "localhost:9200/department/employee/8" -H 'Content-Type: application/json' -d'
+{
+    "title" : "The third person",
+	"name":"name 3",
+    "age" : 20,
+	"created":"1560032583658"
+}
+'
+```
