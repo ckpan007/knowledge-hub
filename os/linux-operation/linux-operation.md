@@ -3,6 +3,18 @@ This is for linux operation usage.
 
 # Linux Operation
 
+## 系统相关
+
+### Invalid operation package
+```sh
+root@ubuntu:/opt# apt package index
+# E: Invalid operation package
+
+# 如果上述情况，执行：
+
+sudo apt update && sudo apt full-upgrade # 让系统进行更新即可。注意：不要再随意运行apt autoremove命令了！
+```
+
 ## ssh connection
 
 ### Install openssh-server
