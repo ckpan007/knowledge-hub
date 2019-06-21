@@ -20,5 +20,6 @@ https://github.com/erhwenkuo/deep-learning-with-keras-notebooks
 
 
 深度有趣：https://github.com/Honlan/DeepInterests
+深度有趣pdf: https://github.com/xiangweizeng/DeepInterests/blob/master/%E6%B7%B1%E5%BA%A6%E6%9C%89%E8%B6%A3.pdf
 
 ```
