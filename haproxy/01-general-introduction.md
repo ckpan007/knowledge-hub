@@ -49,3 +49,10 @@ load balancer负责将过来的请求分发至不同的节点上。它一直管�
 ## 冗余性 Redundancy
 冗余性指的是：当出事情的时候有备选方案。在这里指的是:当后端节点出现状况中断的时候，那么冗余性可以保证有其他存活的节点继续提供服务。传统的web server当server挂掉了，那么整个服务就中断了。
 
+
+# HA运行在哪里？
+HA是一个软件包，HA可以安装到Linux的各个操作系统中，例如Unbuntu, CentOS, Debian等。也同时可以被安装到Solaris, FreeBSD, AIX系统中。但是，不能安装到windows上。但是即便如此，HA还是能够代理windows操作系统上的服务。
+
+# HA花钱吗？
+完全免费且开源。它是分布式的且使用GNU General Public License。意味着你可以在任何情况下使用HA且完全不用付费。
+
