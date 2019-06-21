@@ -21,6 +21,9 @@ haproxy -v
 # Verify haproxy service is running
 service haproxy status
 
+# Restart HA service
+service haproxy restart
+
 
 ```
 
