@@ -27,6 +27,9 @@ service haproxy restart
 
 ```
 
+也是可以选择通过docker方式来安装的，但是在本文中不会包含此项。
+
+
 # HAProxy files
 | File Name | Description |
 |:---|:---|
