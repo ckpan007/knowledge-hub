@@ -15,3 +15,8 @@
 | 5-Session | Allows applications that are connected over a network to participate in a shared, ongoing conversation, much like a phone conversation between two people. |
 | 6-Presentation | Responsible for transforming data between machines that may represent it differently, such as converting line endings between linux and windows. |
 | 7-Application | Specifices how data is interpreted by various kinds of network applications. For example, HTTP is a protocol used by web browsers for sending and receiving webpages. |
+
+
+## LB与OSI Layer
+有些做负载均衡的只能处理第四层，仅仅根据源和目标IP地址和端口将数据路由到服务器。但是HA可以做到更高的一层第七层应用层。这样就能够看到每个请求的headers，cookies, message bodies等等。同样HA支持第四层，你可以配置HA使得其负载均衡到第四层的请求。比如当要负载某个MYSQL的主从时，就可以不使用HTTP，而是使用TCP。
+
