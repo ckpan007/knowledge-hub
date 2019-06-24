@@ -87,6 +87,10 @@ root@ubuntu:/etc/haproxy#
 
 ```
 
+注意：一般涉及到ha的一些行为上的变更等，主要更改配置文件发生在上面的/etc/haproxy/haproxy.cfg文件。
+
+
+
 # /etc/default/haproxy
 
 ```
