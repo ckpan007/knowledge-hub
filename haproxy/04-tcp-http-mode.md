@@ -20,3 +20,19 @@
 ## LB与OSI Layer
 有些做负载均衡的只能处理第四层，仅仅根据源和目标IP地址和端口将数据路由到服务器。但是HA可以做到更高的一层第七层应用层。这样就能够看到每个请求的headers，cookies, message bodies等等。同样HA支持第四层，你可以配置HA使得其负载均衡到第四层的请求。比如当要负载某个MYSQL的主从时，就可以不使用HTTP，而是使用TCP。
 
+# Mode tcp
+```
+frontend mysql
+        mode tcp
+        bind *:3306
+        default_backend mysqlserver
+
+backend mysqlserver
+        mode tcp
+        server db1 196.168.50.10:3306
+        server db2 196.168.50.11:3307
+```
+
+mode默认指向到tcp如果没显示设置的话。即便服务是基于HTTP的，我们也依然可以配置使用TCP。当你设置Mode为tcp的时候，则表示你只希望HA帮你做到第四层tcp这一层。而不去应用HA到HTTP这一层。如果你要使用HTTP，那么就要使用mode http模式。
+
+
