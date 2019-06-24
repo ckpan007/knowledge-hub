@@ -44,6 +44,7 @@ service haproxy restart
 | /etc/init.d | HA服务的初始化程序 |
 
 
+
 # /etc/haproxy
 
 ```
@@ -88,6 +89,47 @@ root@ubuntu:/etc/haproxy#
 ```
 
 注意：一般涉及到ha的一些行为上的变更等，主要更改配置文件发生在上面的/etc/haproxy/haproxy.cfg文件。
+
+
+## haproxy.cfg详解
+
+### global部分
+
+| Item | Description |
+|:---|:---|
+| global | HA定义其自身运行进程的相关的属性，在global中可以分为多个具体的配置项 |
+| log | 配置当有新的请求过来的时候，配置其syslog以及任何错误记录的路径 |
+| chroot | 出于安全角度考虑，通过chroot来运行HA进程 |
+| stats | 包含一个UNIX socket，HA在启动的时候会绑定这个套接字，这样用户可以通过命令行来与HA进行交互，比如enable或者disable我们设置好的代理等 |
+| user和group | HA进程作为哪个user哪个group来运行， 可以通过"ps -eo user,group,args | grep haproxy"查看 |
+| daemon | 配置HA使用后台方式运行 |
+| /etc/default/haproxy | HA默认配置目录，比如在这里您可以更改配置让HA启动的时候到自定义目录去查找配置文件 |
+| /etc/haproxy | HA的配置文件所在目录，以及当发生HTTP错误页面所在目录 |
+| /etc/init.d | HA服务的初始化程序 |
+
+```sh
+root@ubuntu:/etc/haproxy# ps -eo user,group,args | grep haproxy
+root     root     /usr/sbin/haproxy-systemd-wrapper -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid
+haproxy  haproxy  /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -Ds
+haproxy  haproxy  /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg -p /run/haproxy.pid -Ds
+root     root     grep --color=auto haproxy
+root@ubuntu:/etc/haproxy#
+
+```
+### defaults部分
+
+这部分的定义将应用于所有代理的配置项
+
+| Item | Description |
+|:---|:---|
+| log global | 告诉每个代理使用HA在global中定义的log选项内容 |
+| mode http | 告诉每个代理处理第七层http，而不是第四层tcp，将使得HA拥有监察HTTP消息的能力 |
+| option  httplog | 打开开关来详细记录http message |
+| option  dontlognull | 当某个request没有发送任何数据的时候不记录任何日志 |
+| timeout connect 5000 | 请求成功连接到后端服务的最大毫秒数，超过就掐断 |
+| timeout client | 等待客户端比如Nginx server响应的最大毫秒数，超过就掐断 |
+| timeout server | 等待后端server给予响应的最大毫秒数，超过就掐断 |
+| errorfile | 发生错误的时候返回的错误页面 |
 
 
 
