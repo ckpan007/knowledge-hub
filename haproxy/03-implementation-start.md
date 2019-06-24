@@ -228,4 +228,46 @@ listen myproxy
 
 
 
+# LB开始
+从上述我们发现，我们配置了监听前端请求，然后代理请求转发到后端的某个具体的backend server负责处理具体的请求。
+那么问题来了，怎样做负载均衡LB呢？所谓LB就是将请求分流，从后端多个server中抽取合适的server来负责处理用户请求，真实其中要负责的东西有很多，比如怎样记忆并保持前端请求与后端server之间的连接，让响应从后端回归到正确到前端请求上。接下来我们将来讨论并且实践这些。
+
+```
+defaults
+        log     global
+        mode    http
+        option  httplog
+        option  dontlognull
+        timeout connect 5000
+        timeout client  50000
+        timeout server  50000
+        errorfile 400 /etc/haproxy/errors/400.http
+        errorfile 403 /etc/haproxy/errors/403.http
+        errorfile 408 /etc/haproxy/errors/408.http
+        errorfile 500 /etc/haproxy/errors/500.http
+        errorfile 502 /etc/haproxy/errors/502.http
+        errorfile 503 /etc/haproxy/errors/503.http
+        errorfile 504 /etc/haproxy/errors/504.http
+
+frontend nginxproxy
+        bind 127.0.0.1:81
+        bind 10.0.0.5:81
+        default_backend backendservers
+backend backendservers
+        balance roundrobin
+        server nginx1 127.0.0.1:80
+        server nginx2 192.168.50.30:80
+        server nginx2 192.168.50.31:80
+        server nginx2 192.168.50.32:80
+```
+
+上述新建了后端集群backendservers,官方说是a pool of backend servers。其实就是集群。集群配置使用了roundrobin算法，即轮询算法，同时配置使用了多组server来做LB。通过轮询算法在多组server中协调网络请求。通过上述的配置，我们就可以灵活多变的配置多组不同的集群，以及不同的frontend，来配置来自于不同地段的请求，将这些请求导向转发到不同的集群中。
+
+注意：**通过将安装配置HA的虚机IP对外暴露给用户，用户访问HA的IP的某个端口，就可以起到代理的效果。而用户对于HA是无感知的。应用放置在HA后面，请求访问到应用会首先到HA，然后HA再根据配置将请求代理转发做LB**。
+
+
+
+
+
+
 
