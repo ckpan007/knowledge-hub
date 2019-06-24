@@ -216,4 +216,16 @@ root@ubuntu:/etc/haproxy#
 
 ```
 
+## 使用listen配置代理服务
+
+从上面可以观察到，其实是通过配置了两端，一段frontend负责代理监听某端口的需求，一段负责将frontend引用的后端真实负责处理请求的明晰化。那么HA同样支持listen方式来糅合两种合并为一种：
+```
+listen myproxy
+       bind *:81
+       server nginx1 127.0.0.1:80
+```
+所起到的效果和上面两端配置效果一样。记住哈，任何一次修改了HA的配置，一定要重启HA服务。
+
+
+
 
