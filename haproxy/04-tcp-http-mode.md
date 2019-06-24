@@ -35,4 +35,11 @@ backend mysqlserver
 
 mode默认指向到tcp如果没显示设置的话。即便服务是基于HTTP的，我们也依然可以配置使用TCP。当你设置Mode为tcp的时候，则表示你只希望HA帮你做到第四层tcp这一层。而不去应用HA到HTTP这一层。如果你要使用HTTP，那么就要使用mode http模式。
 
+## http能做tcp不能做的事情
 
+* 根据URL，Http headers或者body将请求路由到特定的server
+* 修改URL和请求头部信息
+* 读取和设置cookies
+* 根据HTTP响应决定其health check的状态
+
+注意：**default**模式代表既适用于tcp也适用于HTTP。
