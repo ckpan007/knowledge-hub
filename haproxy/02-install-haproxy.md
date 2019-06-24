@@ -132,6 +132,13 @@ root@ubuntu:/etc/haproxy#
 | errorfile | 发生错误的时候返回的错误页面 |
 
 
+### 可以添加的自定义配置
+
+| Item | Description |
+|:---|:---|
+| frontend | 定义一个控制反转的代理服务器，该代理服务负责监听针对一个特定IP和端口的请求 |
+| backend | 定义一个后端服务的池，池里的所有后端服务器都是前端frontend将要访问的对象 |
+| listen | 标记符号将frontend和backend联合到一起 |
 
 # /etc/default/haproxy
 
