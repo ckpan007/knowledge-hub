@@ -47,7 +47,7 @@ mode默认指向到tcp如果没显示设置的话。即便服务是基于HTTP的
 # 在代理过程中遇到的最大的问题
 众所周知，代理其实就是在请求过来的时候加了一层，即本该由某个服务直接接受的请求，被另外一个代理服务器所接收，然后再次转发给具体的实际处理请求的服务。那么对于实际处理请求的服务来说，代理服务器就变成了客户端。这带来的问题就是：**请求源头的一些信息，比如IP，头部信息等等，可能会丢失**。怎样捕获client的请求源信息，比如IP地址，头部等等等等。
 
-## 配置 - 捕获请求源IP地址
+## HTTP Mode 配置 - 捕获请求源IP地址
 其实对于HA来说，还是配置的问题，HA针对此情况，添加配置可以捕获到源信息。其实这也很好理解，什么都是HA自己的，所以无论怎样做，都是有办法的。
 
 ```
@@ -86,4 +86,46 @@ frontend mysql
 
 按照上述设置之后，你就可以通过Forwarded来设置代理记录所有的请求的IP地址信息。
 
+## TCP Mode 配置 - 捕获请求源IP地址信息
+上面我们看到了HTTP模式下怎样捕获client ip地址信息，那么现在我们期望同样的行为发生在TCP模式下。
+
+```
+frontend mysql
+        mode tcp
+        bind *:80
+        default_backend mysqlserver
+
+backend mysqlserver
+        mode tcp
+        server webserver 192.168.3.123:80 send-proxy
+```
+
+```
+PROXY TCP4 192.168.59.22 192.168.3.123 10970 80
+```
+可以看到上面的结果表示，client IP地址为192.168.59.22，HAProxy所在服务器的IP地址为192.168.3.123。上面配置带来的一个强制性要求是：192.168.3.123所在的webserver必须能处理过来的请求信息。如果不能就会发生错误。这里以NGINX来举例说明，NGINX可以在listen中添加proxy_protocol参数来记录相应的信息。
+
+```
+http {
+  log_format proxyformat
+  '$proxy_protocol_addr - $remote_user [$time_local]'
+  '"request" $status $body_bytes_sent'
+  '"$http_referer" "$http_user_agent"'
+
+  access_log /var/log/nginx/proxylog.log proxyformat
+
+  server {
+    listen 80 proxy_protocol;
+    location / {
+      root /user/share/nginx/html;
+    }
+  }
+}
+
+```
+
+```
+192.168.3.123 - - [16/June/2019:17:55 +0000] "GET /HTTP/1.2" 200 ......
+```
+HA既可以监听第七层也可以监听第四层。但是要注意的是：上述的配置对于IIS来说是无效的，因为IIS不支持proxy_protocol。
 
