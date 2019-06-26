@@ -43,3 +43,47 @@ mode默认指向到tcp如果没显示设置的话。即便服务是基于HTTP的
 * 根据HTTP响应决定其health check的状态
 
 注意：**default**模式代表既适用于tcp也适用于HTTP。
+
+# 在代理过程中遇到的最大的问题
+众所周知，代理其实就是在请求过来的时候加了一层，即本该由某个服务直接接受的请求，被另外一个代理服务器所接收，然后再次转发给具体的实际处理请求的服务。那么对于实际处理请求的服务来说，代理服务器就变成了客户端。这带来的问题就是：**请求源头的一些信息，比如IP，头部信息等等，可能会丢失**。怎样捕获client的请求源信息，比如IP地址，头部等等等等。
+
+## 配置 - 捕获请求源IP地址
+其实对于HA来说，还是配置的问题，HA针对此情况，添加配置可以捕获到源信息。其实这也很好理解，什么都是HA自己的，所以无论怎样做，都是有办法的。
+
+```
+frontend mysql
+        mode http
+        bind *:80
+        option forwardfor
+        default_backend mysqlserver
+```
+
+注意上面添加的option forwardfor将会影响到所有frontend配置项里面的所有的代理。
+
+### X-Forwarded-For
+HAProxy会添加一个头部信息到所有的HTTP请求，并且将其值设置为client端的IP地址。
+
+```
+frontend mysql
+        mode http
+        bind *:80
+        option forwardfor if-none
+        default_backend mysqlserver
+```
+if-none表示如果某个请求中已经包含X-Forwarded-For，即已经被其他的代理添加过头部信息了，那么通过if-none表示添加而不是覆盖的行为。但是要注意：X-Forwarded-For并不是标准的HTTP协议规范内容，在RFC 7239中一个被称为Forwarded的头部信息已经被添加到了HTTP规范中。
+
+### Forwarded
+如果你想通过Forwarded来获取client的IP地址等信息，那么需要配置如下：
+
+```
+frontend mysql
+        mode http
+        bind *:80
+        option forwardfor if-none
+        http-request set-header Forwarded for=%[src]
+        default_backend mysqlserver
+```
+
+按照上述设置之后，你就可以通过Forwarded来设置代理记录所有的请求的IP地址信息。
+
+
