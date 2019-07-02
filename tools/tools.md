@@ -20,3 +20,8 @@ https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf
 
 # Linux
 Mobaxitem
+
+
+# 压缩
+
+* Winrar - https://www.rarlab.com/download.htm
